@@ -326,8 +326,14 @@ function saveSubmission(type: string, data: any) {
   try {
     let submissions: any[] = [];
     if (fs.existsSync(SUBMISSIONS_FILE)) {
-      const fileContent = fs.readFileSync(SUBMISSIONS_FILE, "utf-8");
-      submissions = JSON.parse(fileContent);
+      const fileContent = fs.readFileSync(SUBMISSIONS_FILE, "utf-8").trim();
+      if (fileContent) {
+        try {
+          submissions = JSON.parse(fileContent);
+        } catch {
+          submissions = [];
+        }
+      }
     }
     const newRecord = {
       id: `SUB-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
@@ -349,7 +355,7 @@ function saveSubmission(type: string, data: any) {
 async function sendResendMail(subject: string, htmlContent: string) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.warn("WARNING: RESEND_API_KEY is not configured. Email dispatch skipped. To receive emails directly at ahmadfazal.mubeen@gmail.com, add RESEND_API_KEY to your secrets or environment variables.");
+    console.warn("WARNING: RESEND_API_KEY is not configured. Email dispatch skipped. To receive emails directly at ahmad@ahmadfazal.online, add RESEND_API_KEY to your secrets or environment variables.");
     return false;
   }
 
@@ -362,7 +368,7 @@ async function sendResendMail(subject: string, htmlContent: string) {
       },
       body: JSON.stringify({
         from: "Digital Your Leads <onboarding@resend.dev>",
-        to: ["ahmadfazal.mubeen@gmail.com"],
+        to: ["ahmad@ahmadfazal.online"],
         subject: subject,
         html: htmlContent
       })
@@ -483,12 +489,41 @@ app.post("/api/audit", async (req, res) => {
       security_score: `${report.scores.security}/100`,
       load_time_ms: `${report.metrics.loadTimeMs} ms`,
       image_count: report.metrics.imageCount,
-      ai_insights_preview: report.aiStrategicInsights.slice(0, 1200) + "..."
+      ai_insights_preview: (report.aiStrategicInsights || "").slice(0, 1200) + "..."
     });
 
     res.json(report);
   } catch (err: any) {
     res.status(500).json({ error: "Audit process encountered a server-side exception: " + err.message });
+  }
+});
+
+// Admin Submissions Listing (Securely password protected)
+app.post("/api/admin/submissions", async (req, res) => {
+  const { password } = req.body;
+  const adminSecret = process.env.ADMIN_PASSWORD || "ahmad123";
+  
+  if (!password || password !== adminSecret) {
+    return res.status(401).json({ error: "Incorrect administrator passkey. Access denied." });
+  }
+
+  try {
+    let submissions: any[] = [];
+    if (fs.existsSync(SUBMISSIONS_FILE)) {
+      const fileContent = fs.readFileSync(SUBMISSIONS_FILE, "utf-8");
+      try {
+        submissions = JSON.parse(fileContent);
+      } catch {
+        submissions = [];
+      }
+    }
+    // Sort reverse chronological
+    const sorted = [...submissions].sort((a, b) => {
+      return new Date(b.timestamp || 0).getTime() - new Date(a.timestamp || 0).getTime();
+    });
+    res.json({ submissions: sorted });
+  } catch (err: any) {
+    res.status(500).json({ error: "Failed to read logs database: " + err.message });
   }
 });
 

@@ -32,15 +32,16 @@ export function Footer({ setCurrentPage }: FooterProps) {
             <p className="text-xs text-zinc-400 leading-relaxed max-w-sm">
               An elite design, organic traffic, and technology collective. We forge absolute digital brand experiences and engineered growth solutions modeled on Apple-grade product craftsmanship.
             </p>
-            <div className="flex items-center gap-4 text-zinc-500">
-              <a href="https://www.linkedin.com/company/digital-your-seo" target="_blank" rel="noreferrer" className="hover:text-white transition-colors" title="LinkedIn">
+            <div className="flex items-center gap-4 text-zinc-500 font-sans">
+              <a href="https://www.linkedin.com/company/digital-your-seo" target="_blank" rel="noreferrer" className="hover:text-white transition-colors animate-pulse" title="LinkedIn">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://www.instagram.com/digitalyour.seo/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors" title="Instagram">
+              <a href="https://www.instagram.com/digitalyour.seo/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors animate-pulse" title="Instagram">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="mailto:ahmadfazal.mubeen@gmail.com" className="hover:text-white transition-colors" title="Email Direct">
+              <a href="mailto:info@digitalyour.com" className="hover:text-white transition-colors font-mono text-[10px] flex items-center gap-1.5" title="Email Direct">
                 <Mail className="w-4 h-4" />
+                info@digitalyour.com
               </a>
             </div>
           </div>
@@ -132,10 +133,11 @@ export function Footer({ setCurrentPage }: FooterProps) {
             <span className="hidden md:inline">|</span>
             <span className="flex items-center gap-1">
               <Mail className="w-3 h-3 text-zinc-600" />
-              ahmadfazal.mubeen@gmail.com
+              info@digitalyour.com
             </span>
           </div>
           <div className="flex items-center gap-5">
+            <button onClick={() => handleNavClick("admin")} className="hover:text-blue-400 text-zinc-500 transition-colors font-semibold cursor-pointer text-[11px] font-mono">Admin Access</button>
             <a href="#terms" onClick={(e) => e.preventDefault()} className="hover:text-zinc-300 transition-colors">Terms of Service</a>
             <a href="#privacy" onClick={(e) => e.preventDefault()} className="hover:text-zinc-300 transition-colors">Privacy Policy</a>
           </div>

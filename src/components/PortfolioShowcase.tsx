@@ -257,11 +257,11 @@ export function PortfolioShowcase() {
           </a>
 
           <a 
-            href="mailto:ahmadfazal.mubeen@gmail.com" 
+            href="mailto:info@digitalyour.com" 
             className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold bg-zinc-900 border border-white/5 hover:border-white/10 text-zinc-300 hover:text-white transition-all cursor-pointer text-center"
           >
             <Mail className="w-4 h-4 text-zinc-400 shrink-0" />
-            ahmadfazal.mubeen@gmail.com
+            info@digitalyour.com
           </a>
 
           <div className="grid grid-cols-2 gap-2 text-center text-xs">
