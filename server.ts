@@ -48,12 +48,15 @@ async function performRealAudit(targetUrl: string): Promise<any> {
 
   // Crawl attempt
   try {
-    const response = await fetch(normalizedUrl, {
+    const fetchOptions: any = {
       headers: {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 DigitalYourAudit/1.0",
-      },
-      signal: AbortSignal.timeout(5000), // 5s timeout max to avoid hanging client
-    });
+      }
+    };
+    if (typeof AbortSignal !== "undefined" && typeof (AbortSignal as any).timeout === "function") {
+      fetchOptions.signal = (AbortSignal as any).timeout(5000);
+    }
+    const response = await fetch(normalizedUrl, fetchOptions);
     
     htmlContent = await response.text();
     successScrape = true;
@@ -99,7 +102,11 @@ async function performRealAudit(targetUrl: string): Promise<any> {
     // Check robot
     try {
       const parsedUrl = new URL(normalizedUrl);
-      const robotRes = await fetch(`${parsedUrl.origin}/robots.txt`, { signal: AbortSignal.timeout(2000) });
+      const robotFetchOptions: any = {};
+      if (typeof AbortSignal !== "undefined" && typeof (AbortSignal as any).timeout === "function") {
+        robotFetchOptions.signal = (AbortSignal as any).timeout(2000);
+      }
+      const robotRes = await fetch(`${parsedUrl.origin}/robots.txt`, robotFetchOptions);
       hasRobotsTxt = robotRes.status === 200;
     } catch {
       hasRobotsTxt = Math.random() > 0.4;

@@ -15,7 +15,7 @@ export function StackComparisonMatrix() {
       {
         feature: "Mobile Screen Refresh Rate",
         legacy: "30-45 FPS (flickering scroll)",
-        dy: "Native 100-120 FPS (macOS fluid)",
+        dy: "Native 100-120 FPS (fluid rendering)",
         status: "advantage"
       },
       {
@@ -86,31 +86,33 @@ export function StackComparisonMatrix() {
   };
 
   return (
-    <section id="stack-comparison-section" className="py-20 max-w-7xl mx-auto px-6 select-none relative">
+    <section id="stack-comparison-section" className="py-20 max-w-7xl mx-auto px-6 select-none relative border-t border-slate-100">
       
       {/* Visual glowing light sources */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-600/5 rounded-full filter blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-500/[0.03] rounded-full filter blur-[100px] pointer-events-none" />
 
       {/* Header text */}
       <div className="max-w-xl mb-12 text-left">
-        <span className="font-mono text-xs text-blue-500 uppercase tracking-widest block mb-1">Architecture Comparison Matrix</span>
-        <h2 className="font-display font-medium text-2xl sm:text-3xl text-white tracking-tight">
+        <span className="font-mono text-xs text-blue-600 uppercase tracking-widest block mb-1 font-bold bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full w-max">
+          Architecture Comparison Matrix
+        </span>
+        <h2 className="font-display font-semibold text-2xl sm:text-3xl text-slate-900 tracking-tight mt-2">
           How we challenge standard page builders.
         </h2>
-        <p className="text-xs text-zinc-400 mt-2 font-sans font-medium">
+        <p className="text-xs sm:text-sm text-slate-600 mt-2 font-sans">
           Whether you use WordPress, Wix, Squarespace, or generic template structures, you are losing up to 35% of traffic before the page translates to a visitor record. Check our direct comparison metrics below.
         </p>
       </div>
 
       {/* Selector Tabs */}
-      <div className="flex bg-zinc-950/80 p-1 rounded-full border border-white/5 max-w-sm mb-8 font-mono text-[10px]">
+      <div className="flex bg-slate-100 p-1 rounded-full border border-slate-205 max-w-md mb-8 font-mono text-[10px] sm:text-xs">
         <button
           id="btn-tab-speed"
           onClick={() => setActiveTab('speed')}
-          className={`flex-1 py-2 rounded-full capitalize transition-all cursor-pointer ${
+          className={`flex-1 py-2.5 rounded-full capitalize transition-all cursor-pointer font-bold ${
             activeTab === 'speed' 
-              ? "bg-white text-black font-semibold shadow-sm" 
-              : "text-zinc-400 hover:text-white"
+              ? "bg-white text-blue-600 shadow-sm border border-slate-200/50" 
+              : "text-slate-505 hover:text-slate-800"
           }`}
         >
           Rendering Velocity
@@ -118,68 +120,68 @@ export function StackComparisonMatrix() {
         <button
           id="btn-tab-seo"
           onClick={() => setActiveTab('seo')}
-          className={`flex-1 py-2 rounded-full capitalize transition-all cursor-pointer ${
+          className={`flex-1 py-2.5 rounded-full capitalize transition-all cursor-pointer font-bold ${
             activeTab === 'seo' 
-              ? "bg-white text-black font-semibold shadow-sm" 
-              : "text-zinc-400 hover:text-white"
+              ? "bg-white text-blue-600 shadow-sm border border-slate-200/50" 
+              : "text-slate-505 hover:text-slate-800"
           }`}
         >
-          Organic SEO Schema
+          Organic Schema
         </button>
         <button
           id="btn-tab-security"
           onClick={() => setActiveTab('security')}
-          className={`flex-1 py-2 rounded-full capitalize transition-all cursor-pointer ${
+          className={`flex-1 py-2.5 rounded-full capitalize transition-all cursor-pointer font-bold ${
             activeTab === 'security' 
-              ? "bg-white text-black font-semibold shadow-sm" 
-              : "text-zinc-400 hover:text-white"
+              ? "bg-white text-blue-600 shadow-sm border border-slate-200/50" 
+              : "text-slate-505 hover:text-slate-800"
           }`}
         >
-          Security & Access
+          Security &amp; Compliance
         </button>
       </div>
 
       {/* Comparison Grid Board */}
-      <div className="rounded-3xl border border-white/5 bg-[#050506]/80 backdrop-blur-md overflow-hidden text-left">
+      <div className="rounded-3xl border border-slate-200 bg-white shadow-md overflow-hidden text-left">
         
         {/* Table Column headers */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 bg-zinc-950/80 p-6 border-b border-white/5 font-mono text-[10px] text-zinc-500 uppercase tracking-widest font-bold">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 bg-slate-50 p-6 border-b border-slate-200 font-mono text-[10px] text-slate-500 uppercase tracking-widest font-bold">
           <div className="md:col-span-4">Specification Dimension</div>
-          <div className="md:col-span-4 flex items-center gap-1.5 text-rose-400/80">
+          <div className="md:col-span-4 flex items-center gap-1.5 text-rose-600">
             <ShieldAlert className="w-3.5 h-3.5" /> Legacy Builder Stacks
           </div>
-          <div className="md:col-span-4 flex items-center gap-1.5 text-blue-400">
-            <Cpu className="w-3.5 h-3.5 animate-pulse" /> Digital Your Platform
+          <div className="md:col-span-4 flex items-center gap-1.5 text-blue-600">
+            <Cpu className="w-3.5 h-3.5" /> Digital Your Platform
           </div>
         </div>
 
         {/* Data lines representing variables */}
-        <div className="divide-y divide-white/5">
+        <div className="divide-y divide-slate-100">
           {comparisonData[activeTab].map((item, idx) => (
             <div 
               key={idx} 
-              className="grid grid-cols-1 md:grid-cols-12 gap-4 p-6 hover:bg-zinc-950/40 transition-colors"
+              className="grid grid-cols-1 md:grid-cols-12 gap-4 p-6 hover:bg-slate-50/50 transition-colors"
             >
               {/* Feature column */}
               <div className="md:col-span-4 flex flex-col justify-center space-y-1">
-                <span className="text-xs font-semibold text-white font-sans">{item.feature}</span>
+                <span className="text-xs sm:text-sm font-bold text-slate-905 font-sans leading-tight">{item.feature}</span>
                 {item.status === "critical" && (
-                  <span className="font-mono text-[8px] text-blue-500 uppercase tracking-widest font-bold flex items-center gap-1">
+                  <span className="font-mono text-[8px] text-blue-600 uppercase tracking-widest font-bold flex items-center gap-1">
                     <Award className="w-2.5 h-2.5" /> Core conversion pillar
                   </span>
                 )}
               </div>
 
               {/* Legacy column */}
-              <div className="md:col-span-4 flex items-center gap-2 text-xs font-mono text-zinc-500">
-                <X className="w-4 h-4 text-rose-500/60 shrink-0" />
+              <div className="md:col-span-4 flex items-center gap-2 text-xs sm:text-sm font-mono text-slate-500">
+                <X className="w-4 h-4 text-rose-500 shrink-0" />
                 <span>{item.legacy}</span>
               </div>
 
               {/* Digital Your column */}
-              <div className="md:col-span-4 flex items-center gap-2 text-xs font-semibold text-white">
-                <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="font-sans">{item.dy}</span>
+              <div className="md:col-span-4 flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-900 font-sans">
+                <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span className="font-bold text-slate-900">{item.dy}</span>
               </div>
             </div>
           ))}

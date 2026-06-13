@@ -154,13 +154,13 @@ export function PortfolioShowcase() {
       </div>
 
       {/* NEW SECTION 1: Audits & Benchmarks */}
-      <div className="mt-24 border-t border-white/5 pt-16">
+      <div className="mt-24 border-t border-slate-200/80 pt-16">
         <div className="max-w-xl text-left mb-12">
-          <span className="font-mono text-xs text-blue-500 uppercase tracking-widest block mb-1">Crawl & Speed Benchmarks</span>
-          <h3 className="font-display font-medium text-2xl text-white tracking-tight leading-tight">
+          <span className="font-mono text-xs text-blue-600 uppercase tracking-widest block mb-1 font-semibold">Crawl & Speed Benchmarks</span>
+          <h3 className="font-display font-semibold text-2xl text-slate-900 tracking-tight leading-tight">
             Our Standard Output: Zero-Latency Execution.
           </h3>
-          <p className="text-xs text-zinc-400 mt-2 font-sans font-medium">
+          <p className="text-xs text-slate-600 mt-2 font-sans font-medium">
             We don't write slow templates. Every deployment is benchmarked against rigorous Lighthouse performance requirements, ensuring search robots index your assets first.
           </p>
         </div>
@@ -172,19 +172,19 @@ export function PortfolioShowcase() {
             { metric: "100/100", label: "Best Practice Guidelines", desc: "Compiled utilizing standard strict secure pipelines with zero console warnings.", color: "from-purple-500 to-pink-500" },
             { metric: "100/100", label: "Security & Access Control", desc: "Protected using Edge SSL, static routing endpoints, and compliance metrics.", color: "from-amber-500 to-yellow-500" }
           ].map((card, idx) => (
-            <div key={idx} className="bg-[#050506] border border-white/5 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between min-h-[180px] hover:border-white/10 transition-colors">
+            <div key={idx} className="bg-white border border-slate-205 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between min-h-[180px] hover:border-blue-200 hover:shadow-md hover:shadow-blue-500/[0.02] transition-all">
               <div className={`absolute top-0 left-0 w-2 h-full bg-gradient-to-b ${card.color}`} />
               <div className="space-y-3 font-sans">
                 <div className="flex items-center gap-1.5 justify-between">
-                  <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-widest font-bold">Standard Spec</span>
-                  <Award className="w-3.5 h-3.5 text-blue-400" />
+                  <span className="font-mono text-[9px] text-slate-400 uppercase tracking-widest font-extrabold">Standard Spec</span>
+                  <Award className="w-3.5 h-3.5 text-blue-600" />
                 </div>
-                <h4 className="font-display font-semibold text-xs text-zinc-100">{card.label}</h4>
-                <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">{card.desc}</p>
+                <h4 className="font-display font-semibold text-xs text-slate-800">{card.label}</h4>
+                <p className="text-[11px] text-slate-500 leading-relaxed font-sans">{card.desc}</p>
               </div>
               <div className="pt-4 flex items-baseline gap-1 mt-auto">
-                <span className="text-2xl font-display font-bold text-white tracking-tight">{card.metric}</span>
-                <span className="text-[9px] font-mono text-emerald-400 font-bold uppercase">Perfect Score</span>
+                <span className="text-2xl font-display font-extrabold text-slate-900 tracking-tight">{card.metric}</span>
+                <span className="text-[9px] font-mono text-emerald-500 font-extrabold uppercase">Perfect Score</span>
               </div>
             </div>
           ))}
@@ -192,67 +192,63 @@ export function PortfolioShowcase() {
       </div>
 
       {/* NEW SECTION 2: Stack bento specs */}
-      <div className="mt-16 bg-zinc-950/40 p-8 rounded-3xl border border-white/5 text-left relative overflow-hidden">
+      <div className="mt-16 bg-white p-8 rounded-3xl border border-slate-205 text-left relative overflow-hidden shadow-xs">
         <div className="absolute right-0 bottom-0 w-84 h-84 bg-blue-600/5 rounded-full filter blur-[100px] pointer-events-none" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-4 space-y-4">
-            <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-widest block font-bold">Absolute Architecture</span>
-            <h3 className="font-display font-semibold text-xl text-white tracking-tight">Our Zero-Bloat Stack Philosophy</h3>
-            <p className="text-xs text-zinc-400 leading-relaxed font-sans">
+            <span className="font-mono text-[9px] text-slate-400 uppercase tracking-widest block font-bold">Absolute Architecture</span>
+            <h3 className="font-display font-bold text-xl text-slate-900 tracking-tight">Our Zero-Bloat Stack Philosophy</h3>
+            <p className="text-xs text-slate-600 leading-relaxed font-sans font-medium">
               Unlike legacy agencies that install multiple slow WordPress plugins, we write single-source codes manually compiled on edge distributions.
             </p>
             <div className="flex flex-wrap gap-1.5 pt-2">
               {["No Wordpress", "Zero Raw Node Queries", "Vite ESM Native", "Pre-Mapped Schemas", "Next-Gen CSS"].map((badge, i) => (
-                <span key={i} className="font-mono text-[9px] px-2.5 py-1 rounded bg-zinc-900 border border-white/5 text-zinc-400">{badge}</span>
+                <span key={i} className="font-mono text-[9px] px-2.5 py-1 rounded bg-slate-50 border border-slate-200 text-slate-600 font-bold">{badge}</span>
               ))}
             </div>
           </div>
 
           <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-5 rounded-2xl bg-zinc-900/60 border border-white/5 space-y-2">
+            <div className="p-5 rounded-2xl bg-slate-50/50 border border-slate-200/80 space-y-2">
               <div className="flex items-center gap-2">
-                <Cpu className="w-4 h-4 text-blue-400 shrink-0" />
-                <h4 className="font-display font-semibold text-xs text-zinc-100">Compiled React/Vite Core</h4>
+                <Cpu className="w-4 h-4 text-blue-600 shrink-0" />
+                <h4 className="font-display font-semibold text-xs text-slate-800">Compiled React/Vite Core</h4>
               </div>
-              <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
-                Interface loads are calculated instantly under 100 milliseconds. Pages render with zero layout shifts (CLS), satisfying critical Core Web Vitals rankings.
-              </p>
+              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">{`Interface loads are calculated instantly under 100 milliseconds. Pages render with zero layout shifts (CLS), satisfying critical Core Web Vitals rankings.`}</p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-zinc-900/60 border border-white/5 space-y-2">
+            <div className="p-5 rounded-2xl bg-slate-50/50 border border-slate-200/80 space-y-2">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-purple-400 shrink-0" />
-                <h4 className="font-display font-semibold text-xs text-zinc-100">Semantic Microdata (JSON-LD)</h4>
+                <Sparkles className="w-4 h-4 text-purple-600 shrink-0" />
+                <h4 className="font-display font-semibold text-xs text-slate-800">Semantic Microdata (JSON-LD)</h4>
               </div>
-              <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
-                Instead of simple visual page text, your code includes pre-configured geographical latitudes, license specifications, and category lists.
-              </p>
+              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">{`Instead of simple visual page text, your code includes pre-configured geographical latitudes, license specifications, and category lists.`}</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* NEW SECTION 3: Direct Ahmad Calendly & Social touchpoint panel */}
-      <div className="mt-16 bg-[#040405] border border-zinc-900 rounded-3xl p-8 text-left relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto">
+      <div className="mt-16 bg-blue-50/25 border border-blue-500/10 rounded-3xl p-8 text-left relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto shadow-sm">
         <div className="absolute top-1/2 left-10 -translate-y-1/2 w-64 h-64 bg-emerald-500/5 rounded-full filter blur-[80px] pointer-events-none" />
 
-        <div className="space-y-2 max-w-xl">
-          <span className="font-mono text-[9px] text-emerald-400 uppercase tracking-widest font-bold bg-emerald-600/10 px-2.5 py-1 rounded-full border border-emerald-500/10">Skip the Confusion</span>
-          <h3 className="font-display font-medium text-xl text-white tracking-tight">Need a custom speed audit or direct SEO blueprints?</h3>
-          <p className="text-xs text-zinc-400 font-sans leading-relaxed">
+        <div className="space-y-2 max-w-xl relative z-10">
+          <span className="font-mono text-[9px] text-blue-700 uppercase tracking-widest font-extrabold bg-blue-100 px-3 py-1 rounded-full border border-blue-300 w-max whitespace-nowrap inline-block">Skip the Confusion</span>
+          <h3 className="font-display font-bold text-xl text-slate-900 tracking-tight">Need a custom speed audit or direct SEO blueprints?</h3>
+          <p className="text-xs text-slate-605 font-sans leading-relaxed font-medium">
             If you are confused or prefer a raw 1-on-1 strategy overview, connect with Ahmad on Instagram, LinkedIn, or schedule an instant 15-minute Zoom call on Calendly.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto shrink-0 font-sans text-xs">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto shrink-0 font-sans text-xs relative z-10">
           <a 
             href="https://calendly.com/digitalyour-seo/consultation" 
             target="_blank" 
             rel="noreferrer"
-            className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold bg-white text-black hover:bg-zinc-200 transition-all cursor-pointer shadow-md text-center"
+            className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold bg-blue-600 text-white hover:bg-blue-500 transition-all cursor-pointer shadow-md text-center shrink-0 active:scale-95 whitespace-nowrap"
           >
-            <Calendar className="w-4 h-4 text-black shrink-0" />
+            <Calendar className="w-4 h-4 text-white shrink-0" />
             Book Calendly Call
           </a>
 

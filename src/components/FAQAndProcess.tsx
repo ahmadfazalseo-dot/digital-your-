@@ -16,25 +16,25 @@ export function FAQAndProcess() {
       title: "Strategic Blueprint & Schema Audit",
       timeline: "Days 1 - 7",
       desc: "We analyze competitor traffic gap profiles and map direct conversion funnels tailored explicitly to your regional footprint. We establish structured local schema tags prior to writing a single line of interface layout.",
-      icon: <Search className="w-5 h-5 text-blue-400" />
+      icon: <Search className="w-5 h-5 text-blue-600" />
     },
     {
       title: "Zero-Latency Structural Coding",
       timeline: "Days 8 - 25",
       desc: "Our engineers construct clean custom React interfaces directly on lightweight, high-performance Vite bundlers. We bypass heavy site-builders, bloated scripts, and tracking blocks to maintain 100 FPS fluid mobile rendering.",
-      icon: <Code className="w-5 h-5 text-indigo-400" />
+      icon: <Code className="w-5 h-5 text-indigo-600" />
     },
     {
       title: "Index Grounding & Live Deployment",
       timeline: "Days 26 - 35",
       desc: "We deploy systems to ultra-secure, fast content delivery network nodes. Next, we force instantaneous crawl reindexing, submitting deep site structure, certifications, and service license metadata maps directly to Search platforms.",
-      icon: <Rocket className="w-5 h-5 text-purple-400" />
+      icon: <Rocket className="w-5 h-5 text-purple-600" />
     },
     {
       title: "Active Crawl Guard & Performance Scaling",
       timeline: "Ongoing Assurance",
       desc: "Our team monitors core web vitals and organic rank positions continuously. You receive direct live coordinate telemetry, performance maps, and regular metadata patches ensuring ongoing supremacy above competitor domains.",
-      icon: <ShieldCheck className="w-5 h-5 text-emerald-400" />
+      icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />
     }
   ];
 
@@ -58,21 +58,23 @@ export function FAQAndProcess() {
   ];
 
   return (
-    <section id="faq-and-process" className="py-20 max-w-7xl mx-auto px-6 select-none relative">
+    <section id="faq-and-process" className="py-20 max-w-7xl mx-auto px-6 select-none relative border-t border-slate-100">
       
       {/* Visual lighting background */}
-      <div className="absolute right-10 top-1/2 -translate-y-1/2 w-96 h-96 bg-purple-600/5 rounded-full filter blur-[100px] pointer-events-none" />
+      <div className="absolute right-10 top-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full filter blur-[100px] pointer-events-none" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         
         {/* Process Timeline Column (Left - 6 cols) */}
         <div className="lg:col-span-6 space-y-8 text-left">
           <div>
-            <span className="font-mono text-xs text-blue-500 uppercase tracking-widest block mb-1">EXECUTION BENCHMARK</span>
-            <h2 className="font-display font-medium text-2xl sm:text-3xl text-white tracking-tight">
+            <span className="font-mono text-xs text-blue-600 uppercase tracking-widest font-bold bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full inline-block">
+              EXECUTION BENCHMARK
+            </span>
+            <h2 className="font-display font-semibold text-2xl sm:text-3xl text-slate-900 tracking-tight mt-2">
               Our Zero-Lag Delivery Blueprints
             </h2>
-            <p className="text-xs text-zinc-400 mt-2 leading-relaxed max-w-md font-sans">
+            <p className="text-xs sm:text-sm text-slate-655 mt-2 leading-relaxed max-w-md font-sans">
               We align analysis and implementation into a predictable, high-speed engineering pipeline. No guesswork, no communication blocks.
             </p>
           </div>
@@ -85,22 +87,22 @@ export function FAQAndProcess() {
                   id={`delivery-step-${idx}`}
                   key={idx}
                   onClick={() => setActiveStep(idx)}
-                  className={`p-5 rounded-2xl cursor-pointer transition-all duration-300 border ${
+                  className={`p-5 rounded-3xl cursor-pointer transition-all duration-300 border ${
                     isSelected 
-                      ? "bg-zinc-900/60 border-white/10 ring-1 ring-blue-500/10 shadow-lg" 
-                      : "bg-[#040405] border-white/5 opacity-70 hover:opacity-100"
+                      ? "bg-white border-blue-200 ring-2 ring-blue-500/5 shadow-md shadow-blue-500/2" 
+                      : "bg-[#f8fafc]/60 border-slate-200/80 hover:bg-[#f8fafc] hover:border-slate-300"
                   }`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`p-2 rounded-xl shrink-0 ${isSelected ? "bg-blue-600/10 border border-blue-500/20" : "bg-zinc-900 border border-transparent"}`}>
+                    <div className={`p-2.5 rounded-2xl shrink-0 ${isSelected ? "bg-blue-50 border border-blue-200" : "bg-white border border-slate-200"}`}>
                       {step.icon}
                     </div>
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-3">
-                        <h3 className="font-display font-semibold text-xs text-zinc-100">{step.title}</h3>
-                        <span className="font-mono text-[9px] text-blue-400 bg-blue-600/5 px-2 py-0.5 rounded-full border border-blue-500/10">{step.timeline}</span>
+                    <div className="space-y-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="font-display font-bold text-sm text-slate-800">{step.title}</h3>
+                        <span className="font-mono text-[9px] font-bold text-blue-600 bg-blue-50 px-20 py-0.5 rounded-full border border-blue-100">{step.timeline}</span>
                       </div>
-                      <p className="font-sans text-[11px] text-zinc-400 leading-relaxed pt-1 select-text">
+                      <p className="font-sans text-xs text-slate-600 leading-relaxed pt-1.5 select-text">
                         {step.desc}
                       </p>
                     </div>
@@ -114,11 +116,13 @@ export function FAQAndProcess() {
         {/* FAQ Disclosures Column (Right - 6 cols) */}
         <div className="lg:col-span-6 space-y-8 text-left">
           <div>
-            <span className="font-mono text-xs text-blue-500 uppercase tracking-widest block mb-1">CLARIFYING SYSTEM SPECIFICATIONS</span>
-            <h2 className="font-display font-medium text-2xl sm:text-3xl text-white tracking-tight">
+            <span className="font-mono text-xs text-blue-600 uppercase tracking-widest font-bold bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full inline-block">
+              CLARIFYING SYSTEM SPECIFICATIONS
+            </span>
+            <h2 className="font-display font-semibold text-2xl sm:text-3xl text-slate-900 tracking-tight mt-2">
               Frequently Queried Specifications
             </h2>
-            <p className="text-xs text-zinc-400 mt-2 leading-relaxed max-w-sm font-sans">
+            <p className="text-xs sm:text-sm text-slate-655 mt-2 leading-relaxed max-w-sm font-sans">
               Have questions about performance, pricing or SEO pipelines? Find clarifying system coordinates here.
             </p>
           </div>
@@ -130,14 +134,14 @@ export function FAQAndProcess() {
                 <div
                   id={`faq-accordion-${idx}`}
                   key={idx}
-                  className="bg-[#040405] border border-white/5 rounded-2xl overflow-hidden transition-all hover:border-white/10"
+                  className="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all hover:border-blue-200 hover:shadow-xs"
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between p-5 text-left text-xs font-semibold text-zinc-200 hover:text-white transition-colors cursor-pointer"
+                    className="w-full flex items-center justify-between p-5 text-left text-xs sm:text-sm font-semibold text-slate-800 hover:text-slate-900 transition-colors cursor-pointer"
                   >
-                    <span>{faq.question}</span>
-                    <ChevronDown className={`w-4 h-4 text-zinc-500 transition-transform duration-300 shrink-0 ml-4 ${isOpen ? "rotate-180 text-blue-400" : ""}`} />
+                    <span className="leading-snug pr-2 text-slate-800 font-medium">{faq.question}</span>
+                    <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 shrink-0 ml-4 ${isOpen ? "rotate-180 text-blue-600" : ""}`} />
                   </button>
 
                   <AnimatePresence initial={false}>
@@ -148,7 +152,7 @@ export function FAQAndProcess() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                       >
-                        <div className="px-5 pb-5 pt-1 text-[11px] leading-relaxed text-zinc-400 font-sans select-text border-t border-white/5 bg-zinc-950/40">
+                        <div className="px-5 pb-5 pt-1.5 text-xs leading-relaxed text-slate-650 font-sans select-text border-t border-slate-100 bg-slate-50/50">
                           {faq.answer}
                         </div>
                       </motion.div>

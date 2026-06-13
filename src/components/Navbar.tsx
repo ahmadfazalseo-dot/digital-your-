@@ -42,7 +42,7 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
   };
 
   return (
-    <header id="nav-header" className="sticky top-0 z-50 w-full h-14 border-b border-white/5 glassmorphic transition-all duration-300">
+    <header id="nav-header" className="sticky top-0 z-50 w-full h-14 border-b border-slate-200/80 glassmorphic transition-all duration-300">
       <div className="max-w-7xl mx-auto h-full px-6 flex items-center justify-between relative">
         
         {/* Brand Logo - Apple Inspired */}
@@ -51,11 +51,11 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
           onClick={() => handleNavClick("home")}
           className="flex items-center gap-2 cursor-pointer group select-none"
         >
-          <div className="w-6 h-6 rounded-md bg-white flex items-center justify-center p-1 transition-all duration-300 group-hover:bg-blue-600">
-            <span className="font-mono text-xs font-bold text-black group-hover:text-white leading-none">dy</span>
+          <div className="w-6 h-6 rounded-md bg-blue-600 flex items-center justify-center p-1 transition-all duration-300 group-hover:bg-blue-700">
+            <span className="font-mono text-xs font-bold text-white leading-none">dy</span>
           </div>
-          <span className="font-display font-medium text-sm tracking-tight text-white/90 group-hover:text-white transition-colors">
-            digital<span className="text-zinc-400 font-light font-sans group-hover:text-blue-400">your.</span>
+          <span className="font-display font-medium text-sm tracking-tight text-slate-800 group-hover:text-blue-600 transition-colors">
+            digital<span className="text-slate-500 font-light font-sans group-hover:text-blue-600">your.</span>
           </span>
         </div>
 
@@ -67,8 +67,8 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
             onClick={() => handleNavClick("home")}
             className={`px-3.5 py-1 rounded-full text-xs font-normal tracking-wide transition-all duration-300 cursor-pointer ${
               currentPage === "home"
-                ? "text-white bg-white/5 border border-white/10"
-                : "text-zinc-400 hover:text-zinc-200"
+                ? "text-blue-600 bg-blue-50/80 font-semibold border border-blue-100"
+                : "text-slate-600 hover:text-blue-600 hover:bg-slate-50"
             }`}
           >
             Overview
@@ -86,8 +86,8 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
               onClick={() => setDeskDropdownOpen(!deskDropdownOpen)}
               className={`px-3.5 py-1 rounded-full text-xs font-normal tracking-wide transition-all duration-300 cursor-pointer flex items-center gap-1 ${
                 currentPage === "industry" || currentPage === "case-study-deep-dive"
-                  ? "text-blue-400 bg-white/5 border border-white/10 font-medium"
-                  : "text-zinc-400 hover:text-zinc-200"
+                  ? "text-blue-600 bg-blue-50/80 border border-blue-100 font-semibold"
+                  : "text-slate-600 hover:text-blue-600 hover:bg-slate-50"
               }`}
             >
               Expertise
@@ -98,11 +98,11 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
             {deskDropdownOpen && (
               <div 
                 id="expertise-menu-popup"
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[440px] bg-[#0c0c0e] border border-white/10 p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] grid grid-cols-2 gap-1.5 z-50 transform origin-top transition-all"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[440px] bg-white border border-slate-200/80 p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,113,227,0.08)] grid grid-cols-2 gap-1.5 z-50 transform origin-top transition-all"
               >
-                <div className="col-span-2 pb-1.5 mb-1.5 border-b border-white/5 flex items-center gap-1.5 px-2 select-none">
+                <div className="col-span-2 pb-1.5 mb-1.5 border-b border-slate-100 flex items-center gap-1.5 px-2 select-none">
                   <Sparkles className="w-3.5 h-3.5 text-blue-500" />
-                  <span className="font-mono text-[9px] text-zinc-400 uppercase tracking-widest font-semibold">Specialized Industries</span>
+                  <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Specialized Industries</span>
                 </div>
                 {INDUSTRIES.map((ind) => {
                   const isSelected = currentPage === "industry" && selectedIndustryId === ind.id;
@@ -113,8 +113,8 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
                       onClick={() => handleIndustryClick(ind.id)}
                       className={`text-left px-3 py-2 rounded-lg text-[11px] font-sans transition-all duration-200 cursor-pointer flex items-center justify-between ${
                         isSelected 
-                          ? "bg-blue-600/10 text-blue-400 font-semibold border border-blue-500/20" 
-                          : "text-zinc-400 hover:text-white hover:bg-white/5 border border-transparent"
+                          ? "bg-blue-50 text-blue-600 font-semibold border border-blue-100" 
+                          : "text-slate-600 hover:text-blue-600 hover:bg-slate-50 border border-transparent"
                       }`}
                     >
                       <span>{ind.name}</span>
@@ -136,8 +136,8 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
                 onClick={() => handleNavClick(item.page)}
                 className={`px-3.5 py-1 rounded-full text-xs font-normal tracking-wide transition-all duration-300 cursor-pointer ${
                   isActive 
-                    ? "text-white bg-white/5 shadow-sm font-medium border border-white/10" 
-                    : "text-zinc-400 hover:text-zinc-200"
+                    ? "text-blue-600 bg-blue-50/80 font-medium border border-blue-100" 
+                    : "text-slate-600 hover:text-blue-600 hover:bg-slate-50"
                 }`}
               >
                 {item.label}
@@ -170,36 +170,36 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
 
       {/* Mobile Glassmorphic Overlay */}
       {mobileMenuOpen && (
-        <div id="mobile-overlay" className="absolute top-14 left-0 w-full glassmorphic border-b border-white/10 flex flex-col gap-1 p-4 md:hidden max-h-[calc(100vh-3.5rem)] overflow-y-auto">
+        <div id="mobile-overlay" className="absolute top-14 left-0 w-full glassmorphic border-b border-slate-200/80 flex flex-col gap-1 p-4 md:hidden max-h-[calc(100vh-3.5rem)] overflow-y-auto">
           
           <button
             id="mob-nav-home"
             onClick={() => handleNavClick("home")}
             className={`w-full text-left px-4 py-2.5 rounded-xl text-sm transition-all cursor-pointer ${
               currentPage === "home" 
-                ? "text-white bg-white/5 font-semibold" 
-                : "text-zinc-400 hover:text-zinc-200"
+                ? "text-blue-600 bg-blue-50/80 font-semibold" 
+                : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
             }`}
           >
             Overview
           </button>
 
           {/* Expertise Accordion for Mobile */}
-          <div className="border border-white/5 rounded-xl bg-zinc-950/40 p-1">
+          <div className="border border-slate-200/50 rounded-xl bg-slate-50/50 p-1">
             <button
               id="mob-expertise-trigger"
               onClick={() => setMobDropdownOpen(!mobDropdownOpen)}
-              className="w-full text-left px-3 py-2 rounded-lg text-sm transition-all cursor-pointer text-zinc-300 flex items-center justify-between font-medium"
+              className="w-full text-left px-3 py-2 rounded-lg text-sm transition-all cursor-pointer text-slate-800 flex items-center justify-between font-medium"
             >
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 text-slate-800">
                 <Sparkles className="w-3.5 h-3.5 text-blue-500" />
                 Expertise (10 Industries)
               </span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobDropdownOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 ${mobDropdownOpen ? "rotate-180" : ""}`} />
             </button>
 
             {mobDropdownOpen && (
-              <div id="mob-expertise-list" className="pl-3 pr-1 py-1 space-y-0.5 border-t border-white/5 mt-1">
+              <div id="mob-expertise-list" className="pl-3 pr-1 py-1 space-y-0.5 border-t border-slate-200/60 mt-1">
                 {INDUSTRIES.map((ind) => {
                   const isSelected = currentPage === "industry" && selectedIndustryId === ind.id;
                   return (
@@ -209,8 +209,8 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
                       onClick={() => handleIndustryClick(ind.id)}
                       className={`w-full text-left px-3 py-1.5 rounded-md text-xs transition-colors cursor-pointer block ${
                         isSelected 
-                          ? "text-blue-400 font-semibold bg-white/5" 
-                          : "text-zinc-400 hover:text-white"
+                          ? "text-blue-600 font-semibold bg-blue-50" 
+                          : "text-slate-600 hover:text-blue-600 hover:bg-slate-50"
                       }`}
                     >
                       {ind.name}
@@ -231,8 +231,8 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
                 onClick={() => handleNavClick(item.page)}
                 className={`w-full text-left px-4 py-2.5 rounded-xl text-sm transition-all cursor-pointer ${
                   isActive 
-                    ? "text-white bg-white/5 font-semibold" 
-                    : "text-zinc-400 hover:text-zinc-200"
+                    ? "text-blue-600 bg-blue-50/80 font-semibold" 
+                    : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
                 }`}
               >
                 {item.label}
@@ -240,11 +240,11 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
             );
           })}
           
-          <div className="border-t border-white/5 mt-2 pt-3 px-3">
+          <div className="border-t border-slate-200/60 mt-2 pt-3 px-3">
             <button
               id="mob-nav-cta"
               onClick={() => handleNavClick("audit")}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition-all"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition-all cursor-pointer"
             >
               Analyze My Site
               <ArrowUpRight className="w-3.5 h-3.5" />

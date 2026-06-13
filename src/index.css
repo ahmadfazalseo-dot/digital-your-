@@ -21,30 +21,30 @@
 
 @layer base {
   body {
-    @apply bg-black text-white antialiased font-sans overflow-x-hidden selection:bg-blue-600 selection:text-white;
-    background-color: #000000;
+    @apply bg-slate-50 text-slate-800 antialiased font-sans overflow-x-hidden selection:bg-blue-600 selection:text-white;
+    background-color: #f8fafc;
     background-image: 
-      radial-gradient(circle at 50% 15%, rgba(30, 58, 138, 0.3) 0%, transparent 60%),
-      radial-gradient(circle at 80% 80%, rgba(30, 58, 138, 0.05) 0%, transparent 40%);
+      radial-gradient(circle at 50% 15%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 40%);
   }
 }
 
 /* Custom visual utilities */
 .glassmorphic {
-  @apply backdrop-blur-xl border-b border-white/5;
-  background: rgba(0, 0, 0, 0.8);
+  @apply backdrop-blur-xl border-b border-slate-200/80;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .glassmorphic-silver {
-  @apply backdrop-blur-xl border border-white/10;
-  background: rgba(10, 10, 10, 0.9);
+  @apply backdrop-blur-xl border border-slate-200/50;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .bento-card-bg {
-  background: #000000;
+  background: #ffffff;
   position: relative;
   overflow: hidden;
-  @apply border border-white/5 transition-all duration-500 rounded-3xl;
+  @apply border border-slate-200/60 transition-all duration-500 rounded-3xl shadow-xs;
 }
 
 .bento-card-bg::after {
@@ -56,9 +56,9 @@
   height: 200%;
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.04) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(59, 130, 246, 0) 0%,
+    rgba(59, 130, 246, 0.03) 50%,
+    rgba(59, 130, 246, 0) 100%
   );
   transform: rotate(25deg);
   transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
@@ -67,8 +67,8 @@
 }
 
 .bento-card-bg:hover {
-  background: #0a0a0a;
-  @apply border-white/10 shadow-[0_20px_50px_rgba(30,58,138,0.06)];
+  background: #ffffff;
+  @apply border-blue-200/80 shadow-[0_20px_50px_rgba(59,130,246,0.06)];
 }
 
 .bento-card-bg:hover::after {
@@ -154,4 +154,90 @@ html {
 .btn-pulsing-glow {
   animation: button-glow-pulse 3s infinite ease-in-out;
 }
+
+/* ==========================================================
+   Premium White & Royal Blue Core Styling Context Layer
+   ========================================================== */
+
+/* Universal light-mode contrast typography overrides */
+h1, h2, h3, h4, h5, h6, 
+.text-white, .text-zinc-100, .text-zinc-200, .text-zinc-300, 
+.group-hover\:text-white {
+  color: #0f172a !important; /* Elegant ultra-dark slate */
+}
+
+/* Paragraphs and secondary descriptors */
+p, .text-zinc-400, .text-zinc-300\/80 {
+  color: #334155 !important; /* Premium readable slate grey */
+}
+
+/* Subtle meta markers and subnotes */
+.text-zinc-500, .text-zinc-600 {
+  color: #64748b !important;
+}
+
+/* High contrast overrides for blue action buttons & colored indicators */
+.bg-blue-600, .bg-blue-600 *, button.bg-blue-600, button.bg-blue-600 *,
+.bg-blue-500, .bg-blue-500 *, button.bg-blue-500, button.bg-blue-500 *,
+.text-emerald-400, .text-emerald-500, .text-blue-400, .text-blue-500,
+.text-indigo-400, .text-indigo-500, .text-purple-400, .text-purple-500 {
+  color: #0071e3 !important; /* Tech-premium royal blue */
+}
+
+button.bg-blue-600, button.bg-blue-600 *, .bg-blue-600 *, .bg-blue-600 span {
+  color: #ffffff !important; /* White on filled blue button */
+}
+
+/* Solid status badges or dynamic colors */
+.bg-blue-600 {
+  background-color: #0071e3 !important;
+}
+
+.text-emerald-400, .text-emerald-500, .text-emerald-300, .text-emerald-600 {
+  color: #10b981 !important; /* Vivid brand emerald teal */
+}
+
+/* High quality layout blocks & overlay backgrounds inside other files */
+.bg-zinc-950, .bg-zinc-900, .bg-zinc-900\/40, .bg-zinc-950\/20, .bg-zinc-950\/40, 
+.bg-zinc-950\/80, .bg-zinc-900\/50, .bg-black, .bento-card-bg {
+  background-color: #ffffff !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+/* Form inputs & interactive widgets config */
+input, textarea, select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(203, 213, 225, 0.8) !important;
+}
+
+/* Reset dark borders inside dynamic grids and custom page sheets */
+.border-white\/5, .border-white\/10, .border-white\/20, .border-white\/50, .border-zinc-800 {
+  border-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+/* Accent light subtle details overlay */
+.bg-blue-600\/10, .bg-blue-500\/5, .bg-purple-600\/5, .bg-indigo-500\/5 {
+  background-color: rgba(0, 113, 227, 0.04) !important;
+}
+
+/* Standard visual adjustments on high prominence visual sliders */
+#logos-banner {
+  background-color: rgba(241, 245, 249, 0.6) !important;
+  border-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+#corporate-team .bg-zinc-900 {
+  background-color: #f8fafc !important;
+}
+
+#reviews-board font-mono {
+  color: #0071e3 !important;
+}
+
+/* Clean Admin card styles */
+.bg-zinc-950, .border-zinc-800 {
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
 

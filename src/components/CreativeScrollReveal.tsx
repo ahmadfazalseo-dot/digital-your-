@@ -32,7 +32,7 @@ export function CreativeScrollReveal({
           transform: "perspective(1200px) rotateX(0deg) translateY(0px) scale(1)",
           filter: "brightness(1) contrast(1)"
         }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-15px" }}
         transition={{ 
           duration: 0.9, 
           ease: [0.16, 1, 0.3, 1], // Apple-grade Custom Bezier
@@ -59,7 +59,7 @@ export function CreativeScrollReveal({
           scale: 1, 
           y: 0 
         }}
-        viewport={{ once: true, margin: "-120px" }}
+        viewport={{ once: true, margin: "-15px" }}
         transition={{ 
           duration: 1.1, 
           ease: [0.25, 1, 0.5, 1], // Cinema Smooth ease Out
@@ -84,7 +84,7 @@ export function CreativeScrollReveal({
           clipPath: "inset(0% 0% 0% 0%)",
           x: 0
         }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: true, margin: "-15px" }}
         transition={{ 
           duration: 1.0, 
           ease: [0.16, 1, 0.3, 1],
@@ -111,7 +111,7 @@ export function CreativeScrollReveal({
           filter: "blur(0px) contrast(1)",
           y: 0
         }}
-        viewport={{ once: true, margin: "-120px" }}
+        viewport={{ once: true, margin: "-15px" }}
         transition={{ 
           duration: 1.25, 
           ease: [0.16, 1, 0.3, 1], // Cinematic decelerating curve
@@ -138,7 +138,7 @@ export function CreativeScrollReveal({
           rotate: 0,
           scale: 1
         }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-15px" }}
         transition={{ 
           type: "spring", 
           stiffness: 45, 
@@ -170,7 +170,7 @@ export function CreativeScrollReveal({
         y: 0, 
         scale: 1 
       }}
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "-15px" }}
       transition={{ 
         type: "spring",
         stiffness: 55,
@@ -199,7 +199,7 @@ export function CreativeStaggerContainer({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-15px" }}
       variants={{
         hidden: {},
         visible: {

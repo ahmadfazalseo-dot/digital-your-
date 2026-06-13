@@ -75,7 +75,16 @@ export function WebsiteAuditTool({ addToast }: WebsiteAuditToolProps) {
       });
 
       if (!response.ok) {
-        throw new Error("Local diagnostic crawler was blocked or timed out.");
+        let errMsg = "Local diagnostic crawler was blocked or timed out.";
+        try {
+          const errData = await response.json();
+          if (errData && errData.error) {
+            errMsg = errData.error;
+          }
+        } catch {
+          // ignore parsing error
+        }
+        throw new Error(errMsg);
       }
 
       const report: AuditResult = await response.json();
@@ -409,16 +418,16 @@ export function WebsiteAuditTool({ addToast }: WebsiteAuditToolProps) {
             <div className="absolute top-0 right-0 w-60 h-60 bg-blue-500/5 rounded-full filter blur-[70px] pointer-events-none" />
 
             <form id="audit-submission-form" onSubmit={handleRunAudit} className="space-y-6 relative z-10 font-mono text-xs text-left">
-              <div className="border-b border-white/5 pb-4">
-                <h3 className="font-display font-semibold text-zinc-200 text-sm tracking-wide">Enter Web Address</h3>
-                <p className="text-[11px] text-zinc-500 font-sans mt-0.5">Please provide any domain. Scrape pipelines operate immediately.</p>
+              <div className="border-b border-slate-100 pb-4">
+                <h3 className="font-display font-semibold text-slate-950 text-sm tracking-wide">Enter Web Address</h3>
+                <p className="text-[11px] text-slate-500 font-sans mt-0.5">Please provide any domain. Scrape pipelines operate immediately.</p>
               </div>
 
               <div className="space-y-4">
                 <div className="space-y-1">
-                  <label className="text-zinc-400 uppercase tracking-wider block">TARGET WEBPAGE URL</label>
+                  <label className="text-slate-700 font-semibold uppercase tracking-wider block">TARGET WEBPAGE URL</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-3.5 text-zinc-500 font-sans">https://</span>
+                    <span className="absolute left-4 top-3.5 text-slate-400 font-sans">https://</span>
                     <input
                       id="audit-input-url"
                       type="text"
@@ -426,13 +435,13 @@ export function WebsiteAuditTool({ addToast }: WebsiteAuditToolProps) {
                       value={url.replace(/^https?:\/\//i, "")}
                       onChange={(e) => setUrl(e.target.value)}
                       placeholder="apple.com"
-                      className="w-full bg-zinc-900/60 border border-white/5 focus:border-blue-500 rounded-xl pl-18 pr-4 py-3.5 text-white outline-none focus:ring-1 focus:ring-blue-500/20 font-sans text-sm"
+                      className="w-full bg-slate-50/80 border border-slate-200 focus:border-blue-500 rounded-xl pl-18 pr-4 py-3.5 text-slate-900 outline-none focus:bg-white focus:ring-1 focus:ring-blue-500/20 font-sans text-sm"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-zinc-400 uppercase tracking-wider block">YOUR EMAIL FOR AUDIT EXPORTS</label>
+                  <label className="text-slate-700 font-semibold uppercase tracking-wider block">YOUR EMAIL FOR AUDIT EXPORTS</label>
                   <input
                     id="audit-input-email"
                     type="email"
@@ -440,7 +449,7 @@ export function WebsiteAuditTool({ addToast }: WebsiteAuditToolProps) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="partner@yourcompany.com"
-                    className="w-full bg-zinc-900/60 border border-white/5 focus:border-blue-500 rounded-xl px-4 py-3.5 text-white outline-none focus:ring-1 focus:ring-blue-500/20 font-sans text-sm"
+                    className="w-full bg-slate-50/80 border border-slate-200 focus:border-blue-500 rounded-xl px-4 py-3.5 text-slate-900 outline-none focus:bg-white focus:ring-1 focus:ring-blue-500/20 font-sans text-sm"
                   />
                 </div>
               </div>
@@ -448,13 +457,13 @@ export function WebsiteAuditTool({ addToast }: WebsiteAuditToolProps) {
               <button
                 id="audit-submit-btn"
                 type="submit"
-                className="w-full flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl text-xs font-semibold bg-white text-black hover:bg-zinc-200 transition-all cursor-pointer shadow-lg active:scale-95"
+                className="w-full flex items-center justify-center gap-1.5 px-5 py-3.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition-all cursor-pointer shadow-[0_4px_12px_rgba(37,99,235,0.25)] active:scale-95"
               >
                 Trigger Free System Scan
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
-              <div className="text-[10px] text-zinc-500 font-sans leading-relaxed text-center px-4 pt-1">
+              <div className="text-[10px] text-slate-400 font-sans leading-relaxed text-center px-4 pt-1">
                 Note: Scrapes run server-authoritative. By clicking trigger, you verify authorization for visual inspections on the destination framework.
               </div>
             </form>
@@ -561,10 +570,10 @@ export function WebsiteAuditTool({ addToast }: WebsiteAuditToolProps) {
               {/* Sub-Metrics Ring columns (Center Column) */}
               <div className="md:col-span-8 p-8 rounded-3xl bento-card-bg flex flex-col justify-between">
                 
-                <div className="flex flex-col sm:flex-row items-center justify-between border-b border-white/5 pb-5 mb-5 md:mb-0 gap-4">
+                <div className="flex flex-col sm:flex-row items-center justify-between border-b border-slate-100 pb-5 mb-5 md:mb-0 gap-4">
                   <div>
-                    <span className="font-mono text-[10px] text-zinc-500 uppercase">WEB SOURCE UNDER TEST</span>
-                    <h4 className="font-display font-medium text-lg text-white break-all">{results.url}</h4>
+                    <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">WEB SOURCE UNDER TEST</span>
+                    <h4 className="font-display font-bold text-lg text-slate-900 break-all">{results.url}</h4>
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
                     <button
@@ -579,7 +588,7 @@ export function WebsiteAuditTool({ addToast }: WebsiteAuditToolProps) {
                     <button
                       id="audit-reset-btn"
                       onClick={() => { setResults(null); setUrl(""); }}
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-white/5 cursor-pointer max-w-fit"
+                      className="flex items-center gap-1.5 px-4 py-3 rounded-full text-xs font-semibold bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 hover:border-slate-350 cursor-pointer max-w-fit transition-all active:scale-95"
                     >
                       <RefreshCw className="w-3.5 h-3.5 shrink-0" />
                       New Inspection
@@ -590,40 +599,40 @@ export function WebsiteAuditTool({ addToast }: WebsiteAuditToolProps) {
                 {/* Grid of rings */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-4">
                   <div className="flex flex-col items-center text-center space-y-2">
-                    {renderScoreRing(results.scores.seo, 64, 5, "stroke-indigo-500")}
-                    <span className="font-mono text-[10px] text-zinc-400 uppercase">SEO INDEX</span>
+                    {renderScoreRing(results.scores.seo, 64, 5, "stroke-blue-600")}
+                    <span className="font-mono text-[10px] text-slate-500 uppercase font-bold">SEO INDEX</span>
                   </div>
                   <div className="flex flex-col items-center text-center space-y-2">
-                    {renderScoreRing(results.scores.performance, 64, 5, "stroke-emerald-400")}
-                    <span className="font-mono text-[10px] text-zinc-400 uppercase">PAGESPEED</span>
+                    {renderScoreRing(results.scores.performance, 64, 5, "stroke-emerald-500")}
+                    <span className="font-mono text-[10px] text-slate-500 uppercase font-bold">PAGESPEED</span>
                   </div>
                   <div className="flex flex-col items-center text-center space-y-2">
-                    {renderScoreRing(results.scores.brandConsistency, 64, 5, "stroke-purple-500")}
-                    <span className="font-mono text-[10px] text-zinc-400 uppercase">BRAND CH_Y</span>
+                    {renderScoreRing(results.scores.brandConsistency, 64, 5, "stroke-purple-650")}
+                    <span className="font-mono text-[10px] text-slate-500 uppercase font-bold">BRAND HEALTH</span>
                   </div>
                   <div className="flex flex-col items-center text-center space-y-2">
-                    {renderScoreRing(results.scores.security, 64, 5, "stroke-blue-400")}
-                    <span className="font-mono text-[10px] text-zinc-400 uppercase">SSL SEC_Y</span>
+                    {renderScoreRing(results.scores.security, 64, 5, "stroke-sky-500")}
+                    <span className="font-mono text-[10px] text-slate-500 uppercase font-bold">SSL SECURITY</span>
                   </div>
                 </div>
 
                 {/* Specification Table bottom */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-zinc-900/30 p-4 rounded-2xl border border-white/5 font-mono text-[10px]">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-blue-50/20 p-4 rounded-2xl border-2 border-blue-500/10 font-mono text-[10px]">
                   <div>
-                    <span className="text-zinc-500 uppercase block mb-0.5">TTFB SCALED</span>
-                    <span className="text-white font-sans font-medium">{results.metrics.loadTimeMs} ms</span>
+                    <span className="text-slate-500 uppercase block mb-0.5 font-bold">TTFB SCALED</span>
+                    <span className="text-slate-850 font-sans font-bold text-sm">{results.metrics.loadTimeMs} ms</span>
                   </div>
                   <div>
-                    <span className="text-zinc-500 uppercase block mb-0.5">PAGE WEIGHT</span>
-                    <span className="text-white font-sans font-medium">{results.metrics.pageSizeKb} KB</span>
+                    <span className="text-slate-500 uppercase block mb-0.5 font-bold">PAGE WEIGHT</span>
+                    <span className="text-slate-850 font-sans font-bold text-sm">{results.metrics.pageSizeKb} KB</span>
                   </div>
                   <div>
-                    <span className="text-zinc-500 uppercase block mb-0.5">HEADER TAGS</span>
-                    <span className="text-white font-sans font-medium">H1: {results.metrics.h1Count} | H2: {results.metrics.h2Count}</span>
+                    <span className="text-slate-500 uppercase block mb-0.5 font-bold">HEADER TAGS</span>
+                    <span className="text-slate-850 font-sans font-bold text-xs">H1: {results.metrics.h1Count} &bull; H2: {results.metrics.h2Count}</span>
                   </div>
                   <div>
-                    <span className="text-zinc-500 uppercase block mb-0.5">IMAGE ASSETS</span>
-                    <span className="text-white font-sans font-medium">{results.metrics.imageCount} total</span>
+                    <span className="text-slate-500 uppercase block mb-0.5 font-bold">IMAGE ASSETS</span>
+                    <span className="text-slate-850 font-sans font-bold text-sm">{results.metrics.imageCount} total</span>
                   </div>
                 </div>
 
@@ -633,6 +642,180 @@ export function WebsiteAuditTool({ addToast }: WebsiteAuditToolProps) {
 
             {/* Live Web-Crawl Timeline representation of speed milestones */}
             <CrawlerTimelineChart loadTimeMs={results.metrics.loadTimeMs} />
+
+            {/* THE IRRESISTIBLE RESCUE BLUEPRINT SECTION */}
+            <div id="business-rescue-blueprint" className="bg-white border-2 border-blue-600/30 p-6 sm:p-8 rounded-3xl relative overflow-hidden text-left shadow-[0_20px_50px_rgba(59,130,246,0.08)]">
+              <div className="absolute right-0 top-0 w-80 h-80 bg-blue-600/5 rounded-full filter blur-[100px] pointer-events-none" />
+              
+              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between border-b border-slate-200/80 pb-6 mb-8 gap-4">
+                <div className="space-y-1.5">
+                  <span className="font-mono text-xs text-blue-600 uppercase tracking-widest flex items-center gap-1.5 font-bold">
+                    <Award className="w-4 h-4 text-blue-600" />
+                    Absolute Growth Cure — Irresistible Partnership Blueprint
+                  </span>
+                  <h3 className="font-display font-semibold text-2xl sm:text-3xl text-slate-950 tracking-tight">
+                    The &ldquo;digitalyour.&rdquo; Direct Rescue Blueprint
+                  </h3>
+                  <p className="text-xs text-slate-500 font-sans max-w-2xl leading-normal">
+                    This is not just code or numbers. This is a cold, clinical analysis of where your website is actively bleeding clients to competitors—and how we engineer an unfair commercial advantage to help you dominate.
+                  </p>
+                </div>
+                
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+                  }}
+                  className="px-5 py-3 rounded-full text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white flex items-center gap-2 cursor-pointer transition-all shrink-0 active:scale-95 shadow-[0_4px_12px_rgba(0,113,227,0.2)] font-sans"
+                >
+                  Acquire Our Services Immediately
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+              {/* Gaps Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                {/* Deficit A: Performance Handshake Gap */}
+                <div className="border border-slate-200/60 rounded-2xl p-5 bg-slate-50/40 hover:bg-white hover:border-blue-300 transition-all space-y-4">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-8 h-8 rounded-full bg-red-50 text-red-600 text-xs font-semibold flex items-center justify-center border border-red-100 font-mono">01</span>
+                    <h4 className="font-display font-bold text-sm text-slate-850">Critical Performance Speed Deficit</h4>
+                  </div>
+                  
+                  <div className="space-y-3 pl-1 font-sans text-xs">
+                    <div>
+                      <span className="font-mono text-[9px] uppercase font-bold text-red-500 block">✦ WHAT IS LACKING &amp; WHY IT HURTS:</span>
+                      <p className="text-slate-600 mt-1 leading-relaxed">
+                        Your server handshake is clocked at a slow <strong className="text-slate-950">{results.metrics.loadTimeMs}ms</strong>. Page loading lag is caused by heavy, uncompressed builder templates or generic hosting setups.
+                      </p>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[9px] uppercase font-bold text-slate-500 block">✦ THE SYSTEMIC DAMAGE:</span>
+                      <p className="text-slate-500 mt-0.5 leading-relaxed">
+                        67% of users abandon a page if it fails to reveal visual coordinates within 1.5 seconds. You are literally paying marketing dollars just to send prospective customers to local competitors.
+                      </p>
+                    </div>
+                    <div className="bg-blue-50/50 border border-blue-100 p-3.5 rounded-xl">
+                      <span className="font-mono text-[9px] uppercase font-bold text-blue-600 block">✦ HOW WE TAKE ABSOLUTE CARE OF IT:</span>
+                      <p className="text-slate-700 mt-1 leading-relaxed font-sans font-medium">
+                        We rewrite your digital flagship from zero using clean, handcoded React/TypeScript. We deliver a &ldquo;zero-buffer&rdquo; experience that loads in under 300ms, capturing customer intent instantly.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Deficit B: Search Crawler Invisibility Gap */}
+                <div className="border border-slate-200/60 rounded-2xl p-5 bg-slate-50/40 hover:bg-white hover:border-blue-300 transition-all space-y-4">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-8 h-8 rounded-full bg-amber-50 text-amber-600 text-xs font-semibold flex items-center justify-center border border-amber-100 font-mono">02</span>
+                    <h4 className="font-display font-bold text-sm text-slate-850">Organic SEO Visibility Blindspot</h4>
+                  </div>
+                  
+                  <div className="space-y-3 pl-1 font-sans text-xs">
+                    <div>
+                      <span className="font-mono text-[9px] uppercase font-bold text-amber-600 block">✦ WHAT IS LACKING &amp; WHY IT HURTS:</span>
+                      <p className="text-slate-600 mt-1 leading-relaxed">
+                        Your SEO Crawl Index scores a sparse <strong className="text-slate-950">{results.scores.seo}/100</strong>. Missing tag headers, poorly placed keyword sets, and absent structured metadata leave search robots blind.
+                      </p>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[9px] uppercase font-bold text-slate-500 block">✦ THE SYSTEMIC DAMAGE:</span>
+                      <p className="text-slate-500 mt-0.5 leading-relaxed">
+                        Your business is buried beyond the top results, completely invisible to premium, ready-to-buy searchers trying to book premium packages.
+                      </p>
+                    </div>
+                    <div className="bg-blue-50/50 border border-blue-100 p-3.5 rounded-xl">
+                      <span className="font-mono text-[9px] uppercase font-bold text-blue-600 block">✦ HOW WE TAKE ABSOLUTE CARE OF IT:</span>
+                      <p className="text-slate-700 mt-1 leading-relaxed font-sans font-medium">
+                        We deploy professional, hardcoded JSON-LD schema networks and semantic markup directly into your page tags. We map out high-intent local query funnels to place your brand permanently in the top spots.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Deficit C: Compliance & Legal Exposure Gaps */}
+                <div className="border border-slate-200/60 rounded-2xl p-5 bg-slate-50/40 hover:bg-white hover:border-blue-300 transition-all space-y-4">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-8 h-8 rounded-full bg-red-50 text-red-600 text-xs font-semibold flex items-center justify-center border border-red-100 font-mono">03</span>
+                    <h4 className="font-display font-bold text-sm text-slate-855">Compliance &amp; Accessibility Vulnerabilities</h4>
+                  </div>
+                  
+                  <div className="space-y-3 pl-1 font-sans text-xs">
+                    <div>
+                      <span className="font-mono text-[9px] uppercase font-bold text-red-500 block">✦ WHAT IS LACKING &amp; WHY IT HURTS:</span>
+                      <p className="text-slate-600 mt-1 leading-relaxed">
+                        Our Crawler found <strong className="text-slate-950">{results.metrics.imagesWithoutAlt} image asset(s)</strong> with null or generic alternative text values. Lack of accessibility compliance fails standard device guidelines.
+                      </p>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[9px] uppercase font-bold text-slate-500 block">✦ THE SYSTEMIC DAMAGE:</span>
+                      <p className="text-slate-500 mt-0.5 leading-relaxed">
+                        This compromises overall user experience, invites algorithmic Google search demotions, and leaves your business exposed to predatory legal compliance demands.
+                      </p>
+                    </div>
+                    <div className="bg-blue-50/50 border border-blue-100 p-3.5 rounded-xl">
+                      <span className="font-mono text-[9px] uppercase font-bold text-blue-600 block">✦ HOW WE TAKE ABSOLUTE CARE OF IT:</span>
+                      <p className="text-slate-700 mt-1 leading-relaxed font-sans font-medium">
+                        Our technical leads manually tag, compress, and define every visual asset with descriptive descriptive markup. We fortify your compliance stature and expand local image search discovery.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Deficit D: Low-Trust High-Friction UI Gaps */}
+                <div className="border border-slate-200/60 rounded-2xl p-5 bg-slate-50/40 hover:bg-white hover:border-blue-300 transition-all space-y-4">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 text-xs font-semibold flex items-center justify-center border border-indigo-100 font-mono">04</span>
+                    <h4 className="font-display font-bold text-sm text-slate-850">Cheap-Template Aesthetic Trust Friction</h4>
+                  </div>
+                  
+                  <div className="space-y-3 pl-1 font-sans text-xs">
+                    <div>
+                      <span className="font-mono text-[9px] uppercase font-bold text-indigo-500 block">✦ WHAT IS LACKING &amp; WHY IT HURTS:</span>
+                      <p className="text-slate-600 mt-1 leading-relaxed">
+                        Lack of a bespoke visual voice. Using unaligned layout modules, cookie-cutter templates, and boring font setups looks generic to the sophisticated, luxury customer.
+                      </p>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[9px] uppercase font-bold text-slate-500 block">✦ THE SYSTEMIC DAMAGE:</span>
+                      <p className="text-slate-500 mt-0.5 leading-relaxed">
+                        Premium customers (such as patient med-spa owners, buyers, high-value leads) are design-sensitive. Clunky, low-prestige layouts trigger dynamic trust skepticism, tanking inquiries.
+                      </p>
+                    </div>
+                    <div className="bg-blue-50/50 border border-blue-100 p-3.5 rounded-xl">
+                      <span className="font-mono text-[9px] uppercase font-bold text-blue-600 block">✦ HOW WE TAKE ABSOLUTE CARE OF IT:</span>
+                      <p className="text-slate-700 mt-1 leading-relaxed font-sans font-medium">
+                        We design with gorgeous, high-end Apple-inspired layout pacing, elegant negative space, custom display typography, and smooth interactive micro-transitions to command absolute authority.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* High prominence footer call to action */}
+              <div className="bg-slate-50 border border-slate-200/65 p-6 rounded-2xl mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="space-y-1">
+                  <h4 className="font-display font-semibold text-sm text-slate-950">Let us deploy this premium rescue system for you</h4>
+                  <p className="text-[11px] text-slate-500 font-sans leading-relaxed">
+                    We defend quality standards by strictly limiting active project launches to maintain premium engineering focus. Secure your sector exclusivity before a local rival does.
+                  </p>
+                </div>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+                  }}
+                  className="px-5 py-3 rounded-full text-xs font-semibold bg-slate-900 border border-slate-200 text-white transition-all cursor-pointer inline-flex items-center gap-1.5 shrink-0 font-sans"
+                >
+                  Lock In My Free Growth Consultation
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
 
             {/* Diagnostics List list sections */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
