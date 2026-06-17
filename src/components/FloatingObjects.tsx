@@ -37,12 +37,25 @@ export function FloatingObjects() {
         // Render based on type
         const renderShape = () => {
           switch (obj.type) {
-            case "blob":
+            case "blob": {
+              const isIndigo = obj.color.includes("indigo");
+              const isPurple = obj.color.includes("purple");
+              const centerColor = isIndigo 
+                ? "rgba(129, 140, 248, 0.12)" 
+                : isPurple 
+                  ? "rgba(216, 180, 254, 0.12)" 
+                  : "rgba(96, 165, 250, 0.14)";
               return (
                 <div 
-                  className={`w-full h-full rounded-full ${obj.color} ${obj.blur ? "blur-[80px]" : ""}`} 
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    background: `radial-gradient(circle, ${centerColor} 0%, rgba(255, 255, 255, 0) 70%)`
+                  }}
+                  className="rounded-full pointer-events-none" 
                 />
               );
+            }
             case "ring":
               return (
                 <div 

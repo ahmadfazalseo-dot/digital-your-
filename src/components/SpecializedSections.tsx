@@ -19,39 +19,39 @@ export function SpecializedHomeSection() {
   const [activeTab, setActiveTab] = useState<"bloated" | "handcoded">("handcoded");
 
   return (
-    <section id="special-home-section" className="py-20 max-w-7xl mx-auto px-6 select-none border-t border-white/5">
+    <section id="special-home-section" className="py-20 max-w-7xl mx-auto px-6 select-none border-t border-slate-100">
       <div className="max-w-3xl mx-auto text-center mb-12 space-y-3">
-        <span className="font-mono text-xs text-blue-500 uppercase tracking-widest inline-flex items-center gap-1.5">
-          <Cpu className="w-3.5 h-3.5 animate-spin" />
-          Interactive Telemetry Engine
+        <span className="font-mono text-xs text-blue-600 uppercase tracking-widest inline-flex items-center gap-1.5 bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full font-bold">
+          <Cpu className="w-3.5 h-3.5" />
+          Technical Telemetry
         </span>
-        <h2 className="font-display font-medium text-3xl text-white tracking-tight">
-          How We Build Versus Standard Bloat
+        <h2 className="font-display font-semibold text-3xl text-slate-900 tracking-tight">
+          How We Build vs. Standard Agency Bloat
         </h2>
-        <p className="text-xs text-zinc-400">
-          Most agencies use drag-and-drop page builders that generate excessive code nests. Explore the technical diagnostic difference in execution.
+        <p className="text-sm text-slate-600 max-w-2xl mx-auto">
+          95% of agencies rely on sluggish drag-and-drop page builders that inject excess nests of legacy code. We build clean, compiled React nodes for maximum Speed Index scores.
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto bento-card-bg p-6 md:p-8 rounded-3xl border border-white/5">
+      <div className="max-w-4xl mx-auto bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200/60 shadow-xs">
         {/* Toggle Controls */}
-        <div className="flex bg-zinc-950 p-1.5 rounded-full max-w-md mx-auto mb-8 border border-white/5">
+        <div className="flex bg-slate-200/60 p-1.5 rounded-full max-w-md mx-auto mb-8 border border-slate-300/40">
           <button
             onClick={() => setActiveTab("bloated")}
             className={`flex-1 text-center py-2.5 rounded-full text-[11px] font-mono tracking-wider transition-all cursor-pointer ${
               activeTab === "bloated" 
-                ? "bg-red-500/15 border border-red-500/20 text-red-400 font-bold" 
-                : "text-zinc-500 hover:text-zinc-300"
+                ? "bg-white border border-red-200 text-red-600 font-bold shadow-xs" 
+                : "text-slate-500 hover:text-slate-800"
             }`}
           >
-            WordPress / Elementor Bloat
+            WordPress / Theme Bloat
           </button>
           <button
             onClick={() => setActiveTab("handcoded")}
             className={`flex-1 text-center py-2.5 rounded-full text-[11px] font-mono tracking-wider transition-all cursor-pointer ${
               activeTab === "handcoded" 
-                ? "bg-blue-500/15 border border-blue-500/20 text-blue-400 font-bold" 
-                : "text-zinc-500 hover:text-zinc-300"
+                ? "bg-white border border-blue-200 text-blue-600 font-bold shadow-xs" 
+                : "text-slate-500 hover:text-slate-800"
             }`}
           >
             Digital Your Handcoded DOM
@@ -62,54 +62,54 @@ export function SpecializedHomeSection() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
           
           {/* Diagnostic Console Panel */}
-          <div className="md:col-span-7 bg-zinc-950 rounded-2xl border border-white/5 p-5 font-mono text-[10px] flex flex-col justify-between space-y-4">
+          <div className="md:col-span-7 bg-slate-900 rounded-2xl border border-slate-950 p-5 font-mono text-[10px] flex flex-col justify-between space-y-4 shadow-md">
             <div className="space-y-3">
-              <div className="flex items-center justify-between pb-3 border-b border-white/5">
-                <span className="text-zinc-400 flex items-center gap-1.5">
-                  <Terminal className="w-3.5 h-3.5 text-zinc-500" />
+              <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                <span className="text-slate-300 flex items-center gap-1.5">
+                  <Terminal className="w-3.5 h-3.5 text-slate-500" />
                   RENDER_FLOW_CONSOLES
                 </span>
                 <span className={`w-2 h-2 rounded-full ${activeTab === "handcoded" ? "bg-emerald-500 animate-pulse" : "bg-red-500"}`} />
               </div>
 
               {activeTab === "bloated" ? (
-                <div className="space-y-2 text-red-400/80">
-                  <div className="text-zinc-500">[0.00s] HTTP REQUEST: waiting for MySQL DB query...</div>
-                  <div className="text-zinc-500 font-normal">[0.85s] PHP process compiled on server host.</div>
+                <div className="space-y-2 text-red-400">
+                  <div className="text-slate-500">[0.00s] HTTP REQUEST: waiting for MySQL DB query...</div>
+                  <div className="text-slate-500 font-normal">[0.85s] PHP process compiled on server host.</div>
                   <div className="flex items-start gap-1">
                     <span className="text-red-500 font-bold">⚠️ FATAL:</span>
-                    <span>Render-blocking CSS injected from plugin_14, plugin_18, and theme styles.</span>
+                    <span>Render-blocking CSS from theme styles & block builder plugins.</span>
                   </div>
                   <div>[1.50s] Loading Google Fonts, recaptcha.js, and fontawesome SVGs.</div>
                   <div className="text-red-500">[2.20s] JS-heap size exceeded 14.8MB due to elementor-frontend.js.</div>
-                  <div className="text-zinc-500">[3.10s] First Contentful Paint delivered.</div>
+                  <div className="text-slate-500">[3.10s] First Contentful Paint delivered.</div>
                   <div className="text-red-400 font-bold">[CRITICAL] Cumulative Layout Shift detected during image crawl.</div>
                 </div>
               ) : (
-                <div className="space-y-2 text-emerald-400/80">
-                  <div className="text-zinc-500">[0.00s] HTTP REQUEST: serving flat, pre-compiled static assets from CDN.</div>
+                <div className="space-y-2 text-emerald-400">
+                  <div className="text-slate-500">[0.00s] HTTP REQUEST: serving flat, pre-compiled static assets from edge CDN.</div>
                   <div className="text-emerald-400 font-normal">[0.05s] Time-To-First-Byte received. HTML parsed instantly.</div>
                   <div className="flex items-start gap-1">
                     <span className="text-emerald-400 font-bold">✓ SUCCESS:</span>
-                    <span>Inline Critical CSS utilized. Zero external CSS files blocking the preview.</span>
+                    <span>Inline Critical CSS utilized. Zero external stylesheets blocking the preview.</span>
                   </div>
                   <div>[0.12s] Fast font handshake achieved. Layout stable.</div>
                   <div className="text-emerald-400">[0.18s] Total DOM tree size is under 350 nodes. Performance threshold clear.</div>
-                  <div className="text-zinc-500">[0.21s] Time-To-Interactive ready. JavaScript payload is under 15KB.</div>
+                  <div className="text-slate-500">[0.21s] Time-To-Interactive ready. JavaScript payload is under 15KB.</div>
                   <div className="text-emerald-400 font-bold">[PERFECT] 100/100 Mobile audit score dispatched.</div>
                 </div>
               )}
             </div>
 
             {/* Performance Indicators */}
-            <div className="bg-zinc-900 border border-white/5 p-4 rounded-xl space-y-2">
+            <div className="bg-slate-950/80 border border-slate-800 p-4 rounded-xl space-y-2">
               <div className="flex justify-between items-center text-[10px]">
-                <span className="text-zinc-400">Time-To-Interactive (TTI)</span>
+                <span className="text-slate-400">Time-To-Interactive (TTI)</span>
                 <span className={activeTab === "handcoded" ? "text-emerald-400 font-bold" : "text-red-400 font-bold"}>
                   {activeTab === "handcoded" ? "0.2s" : "3.1s"}
                 </span>
               </div>
-              <div className="w-full bg-zinc-950 h-1.5 rounded-full overflow-hidden">
+              <div className="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
                 <div 
                   className={`h-full transition-all duration-700 ${activeTab === "handcoded" ? "bg-emerald-500 w-[100%]" : "bg-red-500 w-[20%]"}`} 
                 />
@@ -119,28 +119,28 @@ export function SpecializedHomeSection() {
 
           {/* Core Takeaways */}
           <div className="md:col-span-5 flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest block">Structural Audit Metrics</span>
-              <h3 className="font-display font-medium text-lg text-white">
-                {activeTab === "handcoded" ? "Lightning fast, native asset speeds" : "The cost of heavy template builders"}
+            <div className="space-y-3 text-left">
+              <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest block font-bold">Performance Analytics</span>
+              <h3 className="font-display font-semibold text-lg text-slate-900">
+                {activeTab === "handcoded" ? "Lightning fast, native asset speeds" : "The high cost of heavy legacy builders"}
               </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed font-sans">
+              <p className="text-xs text-slate-600 leading-relaxed font-sans">
                 {activeTab === "handcoded" 
                   ? "Because our pages are clean and compiled as native, lightweight DOM nodes, search engine spiders easily traverse your text schemas, boosting your organic keyword placement scores instantly."
-                  : "Every time a customer visits an Elementor or Wix site, their browser must parse dozens of unoptimized CSS bundles and bulky JavaScript files, driving bounce rates and killing digital conversion curves."}
+                  : "Every time a customer visits an unoptimized template-built site, their browser must parse dozens of redundant plugins and bulky stylesheets, driving up bounce rates and killing qualified leads."}
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-3 text-center font-mono text-[9px]">
-              <div className="p-3 bg-zinc-950 rounded-xl border border-white/5">
-                <span className="text-zinc-500 block">BUNDLE SIZE</span>
-                <strong className={`text-sm font-sans block mt-1 ${activeTab === "handcoded" ? "text-emerald-400" : "text-red-400"}`}>
+              <div className="p-3 bg-white rounded-xl border border-slate-200/80 shadow-2xs">
+                <span className="text-slate-500 block">BUNDLE SIZE</span>
+                <strong className={`text-xs font-sans block mt-1 font-bold ${activeTab === "handcoded" ? "text-emerald-600" : "text-red-600"}`}>
                   {activeTab === "handcoded" ? "14 KB" : "4.2 MB"}
                 </strong>
               </div>
-              <div className="p-3 bg-zinc-950 rounded-xl border border-white/5">
-                <span className="text-zinc-500 block">SEO VISIBILITY</span>
-                <strong className={`text-sm font-sans block mt-1 ${activeTab === "handcoded" ? "text-emerald-400" : "text-red-400"}`}>
+              <div className="p-3 bg-white rounded-xl border border-slate-200/80 shadow-2xs">
+                <span className="text-slate-500 block">SEO VISIBILITY</span>
+                <strong className={`text-xs font-sans block mt-1 font-bold ${activeTab === "handcoded" ? "text-emerald-600" : "text-red-600"}`}>
                   {activeTab === "handcoded" ? "99/100" : "55/100"}
                 </strong>
               </div>
@@ -212,8 +212,8 @@ export function SpecializedServicesSection() {
                 onClick={() => setSelectedTech(key)}
                 className={`w-full p-4 rounded-xl text-left border flex items-center justify-between transition-all cursor-pointer ${
                   isActive 
-                    ? "bg-zinc-900 border-indigo-500/20 shadow-lg text-white" 
-                    : "bg-zinc-950/40 border-white/5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/50"
+                    ? "bg-blue-50 border-blue-200 shadow-md text-blue-700" 
+                    : "bg-white border-slate-200 text-slate-500 hover:text-slate-800 hover:bg-slate-50/50"
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -313,8 +313,8 @@ export function SpecializedAuditSection() {
                 onClick={() => setActiveBot(key)}
                 className={`w-full p-4 rounded-xl text-left border transition-all cursor-pointer ${
                   isActive 
-                    ? "bg-zinc-900 border-emerald-500/20 shadow-md text-white" 
-                    : "bg-zinc-950 border-white/5 text-zinc-400 hover:text-zinc-200"
+                    ? "bg-emerald-50 border-emerald-250 shadow-md text-emerald-700" 
+                    : "bg-white border-slate-200 text-slate-500 hover:text-slate-800 hover:bg-slate-50/50"
                 }`}
               >
                 <div className="font-mono text-[9px] text-zinc-500 uppercase block mb-1">CRAWL SPIDER</div>
@@ -409,7 +409,7 @@ export function SpecializedPortfolioSection() {
       <div className="max-w-3xl mx-auto bento-card-bg p-6 md:p-8 rounded-3xl border border-white/5 space-y-8">
         
         {/* Speed Toggles */}
-        <div className="grid grid-cols-3 gap-2 bg-zinc-950 p-1.5 rounded-xl border border-white/5">
+        <div className="grid grid-cols-3 gap-2 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
           {(["fiber", "lte", "3g"] as const).map((key) => {
             const isActive = activeSpeed === key;
             return (
@@ -418,8 +418,8 @@ export function SpecializedPortfolioSection() {
                 onClick={() => setActiveSpeed(key)}
                 className={`py-3 rounded-lg text-center text-[10px] font-mono uppercase tracking-wider transition-all cursor-pointer ${
                   isActive 
-                    ? "bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-bold" 
-                    : "text-zinc-500 hover:text-zinc-300"
+                    ? "bg-white border border-blue-250 text-blue-600 font-bold shadow-xs" 
+                    : "text-slate-500 hover:text-slate-800"
                 }`}
               >
                 {key} SIM
@@ -510,8 +510,8 @@ export function SpecializedAboutSection() {
               onClick={() => setActiveStep(idx)}
               className={`p-4 rounded-xl text-left border transition-all cursor-pointer ${
                 activeStep === idx 
-                  ? "bg-zinc-900 border-indigo-500/20 text-white" 
-                  : "bg-zinc-950 border-white/5 text-zinc-500 hover:text-zinc-300"
+                  ? "bg-blue-50 border-blue-200 shadow-md text-blue-700 font-medium" 
+                  : "bg-white border-slate-200 text-slate-500 hover:text-slate-800 hover:bg-slate-50/50"
               }`}
             >
               <div className="font-mono text-[9px] mb-1">{item.label}</div>

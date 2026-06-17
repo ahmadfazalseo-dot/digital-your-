@@ -31,27 +31,27 @@ export const INDUSTRIES: IndustryPageData[] = [
   {
     id: "med-spa",
     name: "Medical Spa",
-    heroOffer: "Get 35% more booked treatments and high-ticket spa packages in just 90 days",
-    heroDesc: "Stop letting slow, template-based booking friction dilute your patient flow. We engineer lightning-fast digital pipelines paired with high-end aesthetic layouts that capture and convert premium wellness patients.",
+    heroOffer: "Stop Leaking High-Ticket Patients to Clunky Booking Systems. Command the Local Premium Aesthetics Market.",
+    heroDesc: "You spend thousands driving premium beauty traffic to a website that drops 70% of hot prospects in the first 3 seconds due to hidden technical lag. We engineer high-prestige, custom-coded digital patient funnels that load instantly and guide clients directly into active bookings for premium Botox, CoolSculpting, and dermal procedures.",
     auditFocus: "MedSpa Treatment Booking Pipeline",
     caseStudy: {
       client: "Aura Luxe Medical Spa",
       title: "How Aura Luxe MedSpa Scaled High-Ticket Botox & CoolSculpting Bookings by 142% in Under 90 Days",
-      challenge: "Aura Luxe had beautiful offices but their slow-loading WordPress page (5.8 seconds) was dropping 72% of mobile traffic from social channels. Automated reminders and booking buttons were breaking, leading to leaked premium consultations.",
-      solution: "We deployed a light-speed, specialized React frontend with direct, hand-guided booking actions. Next, we custom-coded localized Schema tags for medical spa treatments, routing precise geo-targeted keywords straight into Google indexing systems.",
+      challenge: "Aura Luxe had gorgeous clinical offices but their slow-loading, template-reliant WordPress site (5.8 seconds) was dropping 72% of mobile traffic arriving from local social media. Booking buttons regularly broke in the background, leading to leaked premium consultations and high frustration.",
+      solution: "We scrapped their slow drag-and-drop frame and coded a ultra-light React frontend. We custom-engineered localized MedicalWebPage schemas and JSON-LD markup, forcing Google maps to index their aesthetic menu above all regional competitors.",
       metrics: [
-        { label: "BOTOX BOOKINGS JUMP", value: "+142%" },
-        { label: "PAGE LOADING VELOCITY", value: "0.22s" },
-        { label: "AD CONVERSION IMPROVEMENT", value: "3.2x" }
+         { label: "CLINICAL BOOKINGS JUMP", value: "+142%" },
+         { label: "MOBILE LOADING SPEED", value: "0.22s" },
+         { label: "AD CONVERSION IMPROVEMENT", value: "3.2x" }
       ],
-      deepDiveMarkdown: `### Phase 1: Handcoded Front-End Architecture
-We eliminated Aura's heavy plugins and sluggish builder frames, substituting them with a bespoke single-view React build. This brought mobile page load from a failing 5.8s down to a pristine 0.22s, instantly ending bounce leakage.
+      deepDiveMarkdown: `### Phase 1: High-Prestige React Architecture
+We completely eliminated their bloated theme frameworks and heavy third-party plugins, substituting them with a bespoke single-view React build. This brought mobile page load from a failing 5.8s down to a pristine 0.22s, instantly ending bounce leakage.
 
-### Phase 2: Booking Friction Reduction
-We created an elegant, multi-step treatment concern mapping utility. Patients can visually select concerns (e.g. volume loss, fine lines) and directly choose matching premium Botox packages with structured pricing.
+### Phase 2: High-Intent Treatment Reduction
+We created an elegant, multi-step treatment concern mapping utility. Patients can visually select concern spheres (e.g. skin laxity, volume loss, fine lines) and directly choose matching premium Botox packages with structured pricing without filling complex consultation sheets.
 
-### Phase 3: High-Intent Local SEO Optimization
-We integrated specialized MedicalWebPage schema coordinates, targeting location-based intent. Aura Luxe gained rank #1 within their 15-mile service radius for botanical treatments, CoolSculpting, and laser therapies.
+### Phase 3: Localized Medical Map Schemas
+We integrated specialized MedicalWebPage schema coordinates, targeting local regional search maps. Aura Luxe gained rank #1 within their 15-mile service radius for botanical treatments, CoolSculpting, and laser therapies.
 
 ### Resulting Compounding Growth
 Within 90 days, the unified system drove over 380 new appointment inquiries, scaling recurring customer lifetime bookings to unprecedented coordinates.`
@@ -98,21 +98,21 @@ Within 90 days, the unified system drove over 380 new appointment inquiries, sca
   {
     id: "property-mgmt",
     name: "Property Management",
-    heroOffer: "Secure 25% more premium qualified tenants and lease renewals in only 60 days",
-    heroDesc: "Minimize vacancy periods and capture premium corporate rentals. We build high-conviction digital structures showing flawless leasing pathways, lightning speeds, and high-trust resident portals.",
+    heroOffer: "Secure Credit-Verified Premium Residents at Institutional Speed. Eliminate Vacancy Overhead.",
+    heroDesc: "Every day an empty unit sits idle, your portfolio yield decays. Yet standard property platforms bury your luxury rentals inside slow, non-responsive frames that repel premium prospects. We deploy lightweight, handcoded listing gateways that capture high-scale corporate tenants in days, not months.",
     auditFocus: "Property Listing & Application Flow",
     caseStudy: {
       client: "Vanguard Residential Group",
       title: "How Vanguard Residencies Reduced Vacancy Days from 42 to 7 via Dynamic Responsive Portals",
-      challenge: "Vanguard's multi-family listings was a cluttered, non-responsive system. Prospects couldn't sort properties by pet policies or layout scale from their mobile phones, causing high bounce rates on high-margin corporate units.",
-      solution: "We constructed a sub-second interactive properties display using local states filters. We also integrated optimized structured micro-data to secure direct Google Jobs-like map listings for rental apartments.",
+      challenge: "Vanguard's multi-family listings relied on slow, non-responsive iframe embeds that performed horribly on mobile devices. Prospects couldn't sort properties by layout scale, location landmarks, or pet restrictions, causing them to bounce directly to rival property listing aggregators.",
+      solution: "We constructed a sub-second interactive properties display using local state filters. We also integrated optimized structured micro-data (ApartmentComplex and RealEstateAgent schemas) to secure direct Google local map prominence.",
       metrics: [
-        { label: "VACANCY DURATION REDUCTION", value: "-83%" },
+        { label: "VACANCY WINDOW DROPPED", value: "-83%" },
         { label: "APPLICANT CONVERSION", value: "+44%" },
-        { label: "MOBILE APPLICATION BOID", value: "98/100" }
+        { label: "MOBILE PORTAL SCORE", value: "98/100" }
       ],
-      deepDiveMarkdown: `### Phase 1: High-Response Interactive Lists
-We replaced Vanguard's static, iframe-wrapped listings page with an instant client-side filtered grid. Renters scan vacancies in real-time, instantly sorting by rent volume, bedrooms, and pet restrictions.
+      deepDiveMarkdown: `### Phase 1: Zero-Lag Interactive Search
+We replaced Vanguard's static, iframe-wrapped listings page with an instant client-side filtered grid. Renters scan vacancies in real-time, instantly sorting by rent volume, bedrooms, and pet restrictions without reloading.
 
 ### Phase 2: Schema Listing Integration
 We integrated RealEstateAgent and ApartmentComplex schemas. Google directly indexed real-time listings, securing high organic display positions for high-intent tenant lease searches.
@@ -165,26 +165,26 @@ With average vacancy drop to 7 days, Vanguard saved $14,000+ per unit in annuali
   {
     id: "commercial-janitorial",
     name: "Commercial Janitorial",
-    heroOffer: "Win 8+ long-term premium commercial cleaning contracts in exactly 90 days",
-    heroDesc: "Stop throwing money at low-quality lead brokers. We construct high-trust digital conversion funnels targeting medical offices, commercial corporate hubs, and high-ticket fulfillment centers.",
+    heroOffer: "Secure Lucrative Corporation Contracts directly. Bypass Aggregator Bidding Wars.",
+    heroDesc: "Stop throwing money at low-quality lead brokers that sell the same leak information to 5 competing contractors. We design authoritative, certified B2B flagships demonstrating background-checked compliance, ISO safety standards, and structured estimation calculators that win enterprise confidence.",
     auditFocus: "Commercial Estimate Request Funnel",
     caseStudy: {
       client: "Nexus Commercial Cleaning",
       title: "How Nexus Janitorial Captured $861K in Recurring Corporate Cleaning Contracts via Technical Landing Pages",
-      challenge: "Nexus had no site authority and relied on Yelp or Thumbtack leads, where they were forced to fight on razor-thin pricing. They lacked a premium online portfolio that established trust with corporate buyers.",
-      solution: "We engineered a clean, high-prestige corporate cleaning estimator. Corporate facility VPs could detail room size, cleaning frequencies, and receive structured estimates instantaneously.",
+      challenge: "Nexus lacked digital brand authority and depended on Thumbtack or Yelp leads, where they had to fight over razor-thin margin bids. They possessed no professional platform to prove their sanitization safety levels to corporate park directors.",
+      solution: "We engineered an interactive, high-prestige B2B Cleaning Proposal Estimator. Facility managers could input room sizes, frequency patterns, and compliance requirements to receive immediate, official corporate estimates.",
       metrics: [
-        { label: "ACQUIRED ANNUALIZED REVENUE", value: "$861,000" },
-        { label: "QUALIFIED LEAD VOLUME", value: "+280%" },
-        { label: "SALES ESTIMATION INTAKE", value: "3 Min" }
+        { label: "RECURRING B2B REVENUE", value: "$861,000" },
+        { label: "HIGH-VALUE INTAKE LIFT", value: "+280%" },
+        { label: "PROPOSAL RESPONSE TIME", value: "3 Min" }
       ],
-      deepDiveMarkdown: `### Phase 1: Custom Estimate Planner
-We created an interactive pricing estimator directly on the homepage, letting prospect facility managers estimate weekly contract volume based on square footage and specialization (e.g., sterilization).
+      deepDiveMarkdown: `### Phase 1: High-Authority Facility Planner
+We created an interactive pricing estimator directly on the homepage, letting prospect facility VPs configure weekly contract volume based on square footage and specialization (e.g., sterilization).
 
-### Phase 2: Authority Positioning for SEO
-Commercial cleaning is heavily site-centric. We targeted search coordinates like 'commercial sanitization medical center' and 'ISO compliance floor maintenance' within local enterprise parks.
+### Phase 2: Compliance-Focused Search Engine optimization
+Commercial facilities are heavily search-centric. We targeted search coordinates like 'commercial sanitization medical center' and 'ISO compliance floor maintenance' within local enterprise parks.
 
-### Phase 3: High Prestige Corporate Identity
+### Phase 3: Premium Trust Positioning
 We established a high-trust layout using Deep Slate and Ocean accents. The design focuses on reliability, certifications, background checking compliance, and structured performance logs.
 
 ### Commercial Impact
@@ -232,27 +232,27 @@ Nexus landed 14 new multi-location agreements with healthcare suites and regiona
   {
     id: "solar-install",
     name: "Solar Installation",
-    heroOffer: "Book 40% more pre-qualified home energy assessments in just 45 days",
-    heroDesc: "Avoid generic, non-converting lead capture templates. We build highly interactive Solar Savings Estimators that calculate custom tax-rebate potentials and pre-qualify high-intent homeowners for consultations.",
+    heroOffer: "Capture Pre-Qualified High-Income Homeowners. Stop Burning cash on Bad Leads.",
+    heroDesc: "Your outbound sales team is wasting expensive hours calling renters, apartments, or shaded homes generated by generic 'Get Quote' pages. We build high-tech Solar Rebate potential simulators that pre-qualify homeowner roofs and billing metrics automatically before scheduling assessments.",
     auditFocus: "Solar Savings Calculator & Intake",
     caseStudy: {
       client: "SunRidge Solar Systems",
       title: "How SunRidge Solar Boosted Booked Consultations by 75% via Bespoke Rebate Potential Estimators",
-      challenge: "SunRidge was capturing leads with generic 'Get Quote' pages, but 85% of leads were unqualified renters or lived in shaded zip codes, wasting significant outbound call-center hours.",
-      solution: "We engineered an interactive Solar Energy Rebate Evaluator that maps rooftop eligibility, utility bill ranges, and pre-qualifies owners automatically before scheduling consultations.",
+      challenge: "SunRidge were paying thousands to social media platforms, directing traffic to simplistic lead forms. 85% of leads generated were flat-out unqualified — renters or homes surrounded by thick trees, ruining sales efficiency.",
+      solution: "We deployed an interactive Solar Savings Assessment tool. It checked homeownership and pre-evaluated localized utility costs, qualifying candidates automatically before scheduling engineer visits.",
       metrics: [
-        { label: "CONSULTATION BOOKINGS JUMP", value: "+75%" },
-        { label: "SALES ASSESS STAFF SAVINGS", value: "32 hrs/wk" },
-        { label: "GEOGRAPHICAL LEAD TARGETING", value: "100% Valid" }
+        { label: "CONSULTATION LIFT", value: "+75%" },
+        { label: "DESK HOURS CLAWED BACK", value: "32 hrs/wk" },
+        { label: "HOME-OWNER ACCURACY", value: "100%" }
       ],
-      deepDiveMarkdown: `### Phase 1: Real Energy Saving Estimators
+      deepDiveMarkdown: `### Phase 1: Realistic Financial Payback Simulators
 We built an interactive step-by-step calculator that uses homeowners' utility bills to estimate dynamic lifetime saving dividends and local tax incentive eligibility, securing immediate engagement.
 
-### Phase 2: Instant Qualifying API Pipelines
+### Phase 2: Instant Pre-Qualifying Protocols
 The tool parses inputs, verifying homeownership status and average sunlight parameters prior to triggering sales consultations, ensuring zero wasted hours.
 
-### Phase 3: Lightning Page Speeds
-With solar ads heavily consumed over mobile networks, we streamlined assets, reducing mobile site loading down to 0.25s for exceptional conversions.
+### Phase 3: High-Speed Mobile Conversions
+With solar advertising heavily consumed over mobile networks, we streamlined static assets, reducing mobile site loading down to 0.25s for exceptional conversions.
 
 ### Commercial Impact
 SunRidge increased conversion rates, scaling residential installs from 12 per month to 32 per month without adding marketing spend.`
@@ -274,7 +274,7 @@ SunRidge increased conversion rates, scaling residential installs from 12 per mo
         description: "Geo-targeted solar neighborhood SEO campaigns focusing on county-level savings phrases.",
         metric: "Rank #1-3",
         metricLabel: "Across 22 Local Target Counties",
-        solution: "Created individualized community landing paths detailing completed local installation projects."
+        solution: "Created individual community landing paths detailing completed local installation projects."
       },
       {
         id: "solar-brand-prestige",
@@ -299,23 +299,23 @@ SunRidge increased conversion rates, scaling residential installs from 12 per mo
   {
     id: "senior-home-care",
     name: "Senior Home Care",
-    heroOffer: "Generate 30% more high-trust companion care requests and family inquiries within 60 days",
-    heroDesc: "In senior care, empathy and authoritative trust is everything. We combine extremely clean, legible, and warm display structures with high-prestige informational assets that put anxious families at absolute ease.",
+    heroOffer: "Establish Absolute Caregiver trust. Capture High-Ticket Private Care Inquiries Comfortably.",
+    heroDesc: "When families seek care for aging parents, they do so under extreme psychological stress. Cold, hospital-like templates alienate them instantly. We blend comforting typography layouts with certified caregiver showcases that establish safety, vetting credentials, and warm authority.",
     auditFocus: "Family Trust Inquiry & Care Planner",
     caseStudy: {
       client: "Golden Years Companionship",
       title: "How Golden Years Care scaled home care consultation requests by 115% while building deep family authority",
-      challenge: "Families looking for caregiver assistance are deeply anxious and need rapid, authoritative trust. Golden Years' legacy site felt sterile, hospital-like, and hard to navigate for aging children.",
-      solution: "We designed a warm, high-prestige Care Placement Assistor. It guide families gently through planning care levels, matching caregiver certifications, and establishing personal trust markers immediately.",
+      challenge: "Families seeking caregivers were deeply anxious about security and staff competence. Golden Years' legacy site felt sterile, lacked individual caregiver bios, and was difficult for older children to scan from tablets.",
+      solution: "We designed a legibility-first digital Care Placement Planner. Anxious families could configure requested home tasks, specify health limitations (like dementia), and meet certified coordinators immediately.",
       metrics: [
-        { label: "CONSULTATION BOOKINGS", value: "+115%" },
-        { label: "TIME-ON-PAGE TRUST MARK", value: "4.8 Min" },
-        { label: "MOBILE PHONE INTAKE", value: "+92%" }
+        { label: "FAMILY INTAKE JUMP", value: "+115%" },
+        { label: "USER TIME-ON-SITE TRUST", value: "4.8 Min" },
+        { label: "TACTILE PHONE CALLS", value: "+92%" }
       ],
-      deepDiveMarkdown: `### Phase 1: Empathy-Informed User Experience
+      deepDiveMarkdown: `### Phase 1: High-Empathy Scannability
 Home care searches are executed under emotional stress. We formatted a soothing, spacious visual structure prioritizing human care coordinator profiles, security checks, and simple navigation paths.
 
-### Phase 2: Legible Mobile Optimization
+### Phase 2: Senior-Friendly Typography
 We styled large typography hierarchies, high-contrast buttons, and ultra-accessible tap-to-call integrations, ensuring ease-of-use for adult children and senior searchers alike.
 
 ### Phase 3: Structured Local Trust SEO
@@ -366,18 +366,18 @@ Golden Years scaled monthly companion requests from 18 to 44, filling Caregiver 
   {
     id: "custom-pool",
     name: "Custom Pool Builder",
-    heroOffer: "Acquire 15+ premium backyard retreat build inquiries over the next 90 days",
-    heroDesc: "A custom pool is a luxury, $80K+ commercial commitment. We design breathtaking cinematic bento visual portfolios that display your luxury pool builds in premium detail, converting clicks into high-end build consultations.",
+    heroOffer: "Lock in Premium $100K+ Backyard Commissions. Show Your Pools as Built Masterpieces.",
+    heroDesc: "A custom gunite pool is an expensive, major lifestyle commitment. Generic visual websites with grainy social media snapshots ruin your prestige. We construct gorgeous bento-grid visual portfolios that present your excavations like luxury architecture, locking in high-net-worth design calls.",
     auditFocus: "Pool Visual Showcase & Quote Intake",
     caseStudy: {
       client: "Titan Custom Pools & Spas",
       title: "How Titan Pools Secured $1.2M in High-End Backyard Build Contracts via Immersive Visual Portfolios",
-      challenge: "Titan was relying on generic flyers and basic social feeds, lacking a high-prestige, unified digital portfolio that justified their premium $100K+ design and custom excavation rates.",
-      solution: "We architected an immersive, cinematic bento portfolio that groups pool design typologies (Infinity edge, modern geometric, stone lagoons) paired with an interactive Backyard Project Planner.",
+      challenge: "Titan possessed exceptional construction craft, but their digital face looked like a lawn service. Wealthy property owners looking to spend six figures on infinite-edge backyard resort retreats could not visualize the luxury.",
+      solution: "We engineered an ultra-premium, cinematic bento portfolio organizing designs by high-end profiles (infinity-edge, modern geometric, stone Lagoons) integrated with an online Backyard Planner tool.",
       metrics: [
-        { label: "ACQUIRED PROJECT VALUE", value: "$1.28M" },
-        { label: "QUALIFIED LEAD VOLUME", value: "+180%" },
-        { label: "PROJECT DRAFT TIME", value: "4 days" }
+        { label: "SIGNED CONTRACT CAPITAL", value: "$1,280,000" },
+        { label: "PREMIUM CONSULTATIONS", value: "+180%" },
+        { label: "ESTIMATING DRICTION DECREASE", value: "-45%" }
       ],
       deepDiveMarkdown: `### Phase 1: High-Definition Bento Showcases
 A pool purchase is highly emotional. We mapped incredible visual galleries focusing on high-end custom features (built-in spas, waterfalls, LED illumination arrays), presenting immediate visual luxury.
@@ -433,18 +433,18 @@ Within 3 months, Titan booked over 22 pre-qualified consultations, translating i
   {
     id: "commercial-security",
     name: "Commercial Security",
-    heroOffer: "Acquire 45% more high-trust industrial and corporate security consultations in just 45 days",
-    heroDesc: "Enterprise clients demand uncompromised reliability. We engineer ultra-secure, speed-optimized digital platforms demonstrating your custom surveillance systems, access controls, and emergency network compliance.",
+    heroOffer: "Secure High-Value industrial SLA Contracts. Code corporate Confidence.",
+    heroDesc: "Security VPs and Chief Risk Officers do not purchase enterprise access control systems from consumer-styled alarm websites. We engineer ultra-secure, technical platform designs exhibiting multi-location CCTV capabilities, electronic badge compliance protocols, and clear SLA response logs.",
     auditFocus: "Security System Assessment Funnel",
     caseStudy: {
       client: "Sentinel Cyber & Access Control",
       title: "How Sentinel Security Landed 18 Enterprise Warehouse Integration Campaigns in Under 60 Days",
-      challenge: "Sentinel was fighting on price with consumer-grade alarm companies. They lacked a sophisticated B2B platform that spoke to enterprise chief security officers about multi-location network requirements.",
-      solution: "We built an enterprise-grade Systems Configurator targeting security audits. CSOs could select security levels, camera configurations, badge swipe compliance levels, and receive immediate technical proposals.",
+      challenge: "Sentinel competed continually on price with domestic consumer alarm retail companies. They possessed no digital landing that spoke to industrial operations managers about fiber network compliance, corporate fire codes, or logistics hubs.",
+      solution: "We handcoded an enterprise security systems architectural mapper. Technology officers could layout secure doors, badging levels, and remote diagnostic arrays to secure instant, tailored commercial proposal layouts.",
       metrics: [
-        { label: "ENTERPRISE DEALS ACQUIRED", value: "18 Projects" },
-        { label: "RFP PREPARATION TIME SAVED", value: "14 Days" },
-        { label: "SITE TRUST CONVERSION", value: "+340%" }
+        { label: "COMPLETED SLA SECURED", value: "18 Projects" },
+        { label: "RFP PREPARATION REDUCTION", value: "14 Days" },
+        { label: "SLA DEPOSIT TRUST LIFT", value: "+340%" }
       ],
       deepDiveMarkdown: `### Phase 1: Interactive Systems Architect
 We created a sleek, technical panel allowing enterprise security directors to map facility counts, secure access doors, IP camera arrays, and secure monitoring stations.
@@ -500,18 +500,18 @@ Sentinel secured contracts with 18 large-scale fulfillment centers and executive
   {
     id: "mobile-iv",
     name: "Mobile IV Therapy",
-    heroOffer: "Unlock 50% more rehydration and wellness group bookings in just 30 days",
-    heroDesc: "Mobile IV therapy is heavily impulse-driven and relies on hyper-speed mobile schedules. We build handcoded, lightweight booking systems with instant treatment selection that coordinate with field nursing teams instantly.",
+    heroOffer: "Book Wellness & Hangover Groups in 3 Clicks. Eliminate Mobile Booking Friction.",
+    heroDesc: "Mobile IV hydration is a spontaneous, urgent, and highly mobile-driven purchase. If your scheduling flow forces dehydrated users through complex 9-step forms, they will exit and call a competitor. We build lighter-than-air 3-click schedulers with instant zip check to book nurses under 30 seconds.",
     auditFocus: "Mobile Hydration Booking Speed",
     caseStudy: {
       client: "Hydrate Now Therapy",
       title: "How Hydrate Now Scaled Mobile Group Bookings by 180% via Direct Lightning-Speed Web Schedulers",
-      challenge: "Hydrate Now was using a heavy Mindbody integration that forced users to click 9 times to book a session. 68% of users looking for hangover relief or sports performance IVs exited mid-booking from frustration.",
-      solution: "We engineered a clean, 3-click treatment scheduler. Customers pick their premium IV mix (NAD+, hangover recovery, beauty glow), verify their location area, and secure nursing staff under 30 seconds.",
+      challenge: "Hydrate Now utilized booking software that required extensive client sign-ups and multiple load breaks. 68% of customers facing major hangover symptoms or dehydration collapsed out of the funnel due to technical lag.",
+      solution: "We programmed a ultra-light client-side zip validator and menu scheduler. Patients instantly chose custom vitamin drips, mapped their address, and secured booking schedules in under 30 seconds flat.",
       metrics: [
-        { label: "CONVERSIONS ON MOBILE RANGE", value: "+180%" },
-        { label: "STEPS TO COMPLETE BOOKING", value: "3 Steps" },
-        { label: "TREATMENT BOOKED GROWTH", value: "2.4x" }
+        { label: "MOBILE BOOKING CONVERSION", value: "+180%" },
+        { label: "STEPS TO BOOK NURSE", value: "3 Clicks" },
+        { label: "TOTAL COMPLETED REVENUE", value: "2.4x" }
       ],
       deepDiveMarkdown: `### Phase 1: 3-Click Mobile Treatment Interface
 IV customers are often searching for rapid relief. We designed a lightweight mobile layout that displays treatment benefits, nurse background clearances, and booking windows instantly.
@@ -567,18 +567,18 @@ Hydrate Now scaled group bookings for luxury bachelor parties and athletic compl
   {
     id: "epoxy-flooring",
     name: "Epoxy Flooring",
-    heroOffer: "Get 35% more high-ticket garage & commercial coating estimates in 60 days",
-    heroDesc: "Epoxy flooring prospects want to see immaculate product finish and receive instant, easy cost assessments. We build stunning high-definition visual project planners that let garage owners and commercial developers build their layout instantly.",
+    heroOffer: "Lock Up high-Ticket Garage Coating Estimates. Eradicate Manual Travel Overhead.",
+    heroDesc: "Concrete coating clients need visual proof of durability and finish quality. Standard quote forms are generic and boring. We develop intuitive Floor Showroom visualizers that let warehouse managers and homeowners simulate custom flake profiles and request precise valuations on-screen.",
     auditFocus: "Epoxy Visual Planner & Quote Funnel",
     caseStudy: {
       client: "IronClad Garage & Floor Coating",
       title: "How IronClad Epoxy Grew Inbound Estimating Requests by 140% via Bespoke Digital Showroom Planners",
-      challenge: "IronClad relied on print flyers and basic Facebook posts. Homeowners couldn't visualize color flakes or metallic finishes, leading to excessive onsite estimation trips that didn't close.",
-      solution: "We built an interactive, digital Floor Showroom Planner. Users can choose garage bays, select flake styles (Terrazzo, metallic solid, quartz), and request direct instant estimates.",
+      challenge: "IronClad's sales team spent endless hours driving around scheduling physical measurements for leads that didn't purchase. Prospects couldn't conceptualize protective flake patterns or metallic depth, leading to loss of potential contracts.",
+      solution: "We engineered a digital Floor Customizer tool. Users could outline garage dimensions, select color flakes (like Terrazzo or Quartz), check substrate prep guides, and submit measurements instantly.",
       metrics: [
-        { label: "EST ESTIMATES VOLUME JUMP", value: "+140%" },
-        { label: "ONSITE COST REDUCTION", value: "-45%" },
-        { label: "RATED DESIGN LEADS", value: "85/100" }
+        { label: "REQUESTED ESTIMATES INTAKE", value: "+140%" },
+        { label: "UNPRODUCTIVE DRIVE TIME", value: "-45%" },
+        { label: "SALES CLOSING VALUE", value: "85/100" }
       ],
       deepDiveMarkdown: `### Phase 1: Interactive Flake Showroom
 We designed an interactive designer tool allowing users to preview what Terrazzo and premium Metallic solid paints look like inside real garage layouts, increasing desire.
@@ -634,18 +634,18 @@ IronClad closed 22 high-ticket finishes over 60 days, reducing outbound sales fr
   {
     id: "weight-loss-clinic",
     name: "Weight Loss Clinic",
-    heroOffer: "Boost clinical consultation sign-ups and treatment programs by 40% in just 90 days",
-    heroDesc: "Medical weight loss requires absolute HIPAA compliance, premium clinical authority, and extremely high-trust client intake pathways. We build bespoke client onboarding funnels that safely pre-qualify Semaglutide patients.",
+    heroOffer: "Streamline secure Patient Qualifying Pathways. Maximize Doctor Consultation Occupancy.",
+    heroDesc: "In weight-loss medicine, patient sensitivity and HIPAA compliance is paramount. Heavy paper PDF intake packets leak valuable patients to competing clinical programs. We custom-code encrypted, high-conviction health questionnaires that safely qualify GLP-1 (Semaglutide) candidates in 60 seconds.",
     auditFocus: "Clinical Intake & Assessment Stream",
     caseStudy: {
       client: "Metabolic Wellness Center",
       title: "How Metabolic Wellness Scaled Doctor Consultations by 165% with Safe Pre-Qualification Flows",
-      challenge: "The clinical team was wasting thousands of dollars on non-converting Meta campaigns because their intake process was a complex PDF download that patients failed to return.",
-      solution: "We deployed a light-speed, secure, multi-step health assessment. Patients instantly check their GLP-1 (Semaglutide/Tirzepatide) eligibility online, safely matching with local physicians.",
+      challenge: "Metabolic Wellness was losing upwards of 70% of potential patients due to a cumbersome manual clinical intake process. Prospects found the paperwork exhausting and skipped booking their medical consultations.",
+      solution: "We deployed an interactive, highly secure medical eligibility screening tool. Patients validated basic health indexes, and secured doctor's appointments instantly, with complete EHR encryption.",
       metrics: [
-        { label: "CONSULTATION BOOKINGS JUMP", value: "+165%" },
-        { label: "PATIENT ONBOARD SPEED RATE", value: "-70%" },
-        { label: "HIPAA SECURE LEAD STORAGE", value: "100%" }
+        { label: "CONSULTATIONS FILLED", value: "+165%" },
+        { label: "PATIENT QUALIFY TIME LIFT", value: "-70%" },
+        { label: "HIPAA COMPLIANCE RATING", value: "100%" }
       ],
       deepDiveMarkdown: `### Phase 1: Guided Healthcare Assessments
 We replaced Metabolic's heavy PDF layouts with a responsive, secure interactive intake wizard. Patients verify BMI brackets, previous logs, and treatment goals safely.

@@ -100,7 +100,7 @@ export function FAQAndProcess() {
                     <div className="space-y-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2">
                         <h3 className="font-display font-bold text-sm text-slate-800">{step.title}</h3>
-                        <span className="font-mono text-[9px] font-bold text-blue-600 bg-blue-50 px-20 py-0.5 rounded-full border border-blue-100">{step.timeline}</span>
+                        <span className="font-mono text-[9px] font-bold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">{step.timeline}</span>
                       </div>
                       <p className="font-sans text-xs text-slate-600 leading-relaxed pt-1.5 select-text">
                         {step.desc}

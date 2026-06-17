@@ -274,7 +274,7 @@ export function FloatingElements() {
             }}
             onMouseEnter={() => setIsHoveredId(item.id)}
             onMouseLeave={() => setIsHoveredId(null)}
-            className={`pointer-events-auto flex flex-col items-start gap-1 pb-2.5 pt-2 px-3.5 rounded-2xl border border-white/80 bg-white/40 backdrop-blur-md shadow-[0_4px_24px_-4px_rgba(148,163,184,0.12)] selection:bg-transparent cursor-default transition-all hover:bg-white/70 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/[0.04] z-10 w-[185px] sm:w-[210px] group overflow-hidden ${
+            className={`pointer-events-auto flex flex-col items-start gap-1 pb-2.5 pt-2 px-3.5 rounded-2xl border border-white/80 bg-white/95 md:bg-white/90 shadow-[0_4px_24px_-4px_rgba(148,163,184,0.12)] selection:bg-transparent cursor-default transition-all hover:bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/[0.04] z-10 w-[185px] sm:w-[210px] group overflow-hidden transform-gpu will-change-transform ${
               item.mobileVisible ? "flex" : "hidden md:flex"
             }`}
           >
@@ -327,7 +327,10 @@ export function FloatingElements() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-[8%] left-[25%] -translate-x-1/2 w-[320px] h-[320px] rounded-full bg-blue-400/10 filter blur-[90px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, rgba(255, 255, 255, 0) 70%)"
+        }}
+        className="absolute top-[8%] left-[25%] -translate-x-1/2 w-[320px] h-[320px] rounded-full pointer-events-none"
       />
 
       <motion.div
@@ -340,7 +343,10 @@ export function FloatingElements() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-[35%] right-[20%] w-[380px] h-[380px] rounded-full bg-indigo-400/8 filter blur-[100px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(129, 140, 248, 0.12) 0%, rgba(255, 255, 255, 0) 70%)"
+        }}
+        className="absolute top-[35%] right-[20%] w-[380px] h-[380px] rounded-full pointer-events-none"
       />
 
       <motion.div
@@ -353,7 +359,10 @@ export function FloatingElements() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-[68%] left-[15%] w-[420px] h-[420px] rounded-full bg-emerald-400/5 filter blur-[120px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(52, 211, 153, 0.08) 0%, rgba(255, 255, 255, 0) 70%)"
+        }}
+        className="absolute top-[68%] left-[15%] w-[420px] h-[420px] rounded-full pointer-events-none"
       />
 
       <motion.div
@@ -366,7 +375,10 @@ export function FloatingElements() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-[85%] right-[10%] w-[360px] h-[360px] rounded-full bg-blue-400/5 filter blur-[110px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, rgba(255, 255, 255, 0) 70%)"
+        }}
+        className="absolute top-[85%] right-[10%] w-[360px] h-[360px] rounded-full pointer-events-none"
       />
     </div>
   );

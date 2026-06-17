@@ -115,16 +115,16 @@ export function BentoGrid({ onPlanProject }: BentoGridProps) {
     <section id="services-grid" className="py-20 max-w-7xl mx-auto px-6 select-none">
       
       {/* Editorial Header */}
-      <div className="mb-14 text-center md:text-left max-w-2xl">
+      <div className="mb-14 text-center md:text-left max-w-3xl">
         <span className="font-mono text-xs text-blue-500 uppercase tracking-widest flex items-center justify-center md:justify-start gap-1.5 mb-3">
           <Sparkles className="w-3.5 h-3.5" />
           Technical Specifications
         </span>
-        <h2 className="font-display font-medium text-3xl md:text-4xl text-white tracking-tight leading-tight mb-4">
-          How we help you: A complete growth ecosystem.
+        <h2 className="font-display font-medium text-3xl md:text-4xl text-slate-900 tracking-tight leading-tight mb-4 text-center md:text-left">
+          Our Architecture: Engineered to Dominate.
         </h2>
-        <p className="text-sm text-zinc-400 leading-relaxed">
-          Stop struggling with fragmented freelancers or playing coordinator between multiple disconnected agencies. We align your software engineering, search index presence, and client-facing branding under a single cohesive framework.
+        <p className="text-sm text-slate-600 leading-relaxed text-center md:text-left">
+          Stop acting as a referee between unaligned freelancers, sluggish digital agencies, and detached graphic designers. We unify custom custom-handcoded engineering, semantic Google map search schemas, and high-prestige visual positioning under one clear contract.
         </p>
       </div>
 

@@ -30,7 +30,7 @@ export function Footer({ setCurrentPage }: FooterProps) {
               </span>
             </div>
             <p className="text-xs text-slate-600 leading-relaxed max-w-sm text-left">
-              An elite design, organic traffic, and technology collective. We forge absolute digital brand experiences and engineered growth solutions modeled on Apple-grade product craftsmanship.
+              An elite custom engineering and organic growth collective. We design handcoded, light-speed digital flagships that convert high-intent traffic into qualified, high-ticket clients.
             </p>
             <div className="flex items-center gap-4 text-slate-500 font-sans">
               <a href="https://www.linkedin.com/company/digital-your-seo" target="_blank" rel="noreferrer" className="hover:text-blue-600 hover:scale-110 transition-all text-slate-400" title="LinkedIn">

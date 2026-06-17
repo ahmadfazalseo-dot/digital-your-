@@ -31,11 +31,17 @@ import { SleekPageShutter } from "./components/SleekPageShutter";
 import { AdminDashboardScreen } from "./components/AdminDashboardScreen";
 import { FloatingObjects } from "./components/FloatingObjects";
 import { FloatingElements } from "./components/FloatingElements";
+import { InteractiveCursor } from "./components/InteractiveCursor";
+import { TechStackBenchmark } from "./components/TechStackBenchmark";
+import { CodeToUxTimeline } from "./components/CodeToUxTimeline";
+import { SchemaSnippetPreviewer } from "./components/SchemaSnippetPreviewer";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>("home");
   const [selectedIndustryId, setSelectedIndustryId] = useState<string>("med-spa");
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
+  const [routeProgress, setRouteProgress] = useState(0);
+  const [animatingRoute, setAnimatingRoute] = useState(false);
 
   // Bidirectional Slug Routing Manager
   useEffect(() => {
@@ -114,6 +120,22 @@ export default function App() {
     setToasts((prev) => prev.filter((t) => t.id !== id));
   };
 
+  // Auto-clean long tracking search queries (UTMs, fbclid, etc.) from address bar
+  useEffect(() => {
+    if (window.location.search) {
+      const timer = setTimeout(() => {
+        try {
+          // Rebuild URL with only origin, path, and hash
+          const cleanUrl = window.location.origin + window.location.pathname + window.location.hash;
+          window.history.replaceState(null, "", cleanUrl);
+        } catch (e) {
+          console.error("URL cleaning failed:", e);
+        }
+      }, 1000); // 1s delay ensures analytics platforms register campaign parameters beautifully
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   // Welcome interaction
   useEffect(() => {
     addToast("Welcome to Digital Your — Elite design and organic growth ecosystem.", "info");
@@ -122,6 +144,31 @@ export default function App() {
   // Smooth top-scroll reset on every page transition
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
+  }, [currentPage]);
+
+  // Elite modern micro-loader route change effect
+  useEffect(() => {
+    setRouteProgress(15);
+    setAnimatingRoute(true);
+    
+    const t1 = setTimeout(() => {
+      setRouteProgress(65);
+    }, 70);
+
+    const t2 = setTimeout(() => {
+      setRouteProgress(100);
+    }, 240);
+
+    const t3 = setTimeout(() => {
+      setAnimatingRoute(false);
+      setRouteProgress(0);
+    }, 500);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
   }, [currentPage]);
 
   // Premium, buttery-smooth transition config for Apple-grade motion choreography
@@ -134,6 +181,19 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col justify-between overflow-x-hidden relative">
+      <InteractiveCursor />
+
+      {/* Top horizontal browser loader indicator */}
+      {animatingRoute && (
+        <motion.div
+          key="route-loader"
+          style={{ width: `${routeProgress}%` }}
+          className="fixed top-0 left-0 h-[2.5px] bg-gradient-to-r from-blue-600 via-indigo-500 to-sky-400 z-[99999] shadow-[0_1px_10px_rgba(37,99,235,0.45)] pointer-events-none"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: routeProgress === 100 ? 0 : 1 }}
+          transition={{ duration: 0.25 }}
+        />
+      )}
       
       {/* Floating Animated Geometric Objects & Ambient Ambiance in Background */}
       <FloatingObjects />
@@ -169,21 +229,16 @@ export default function App() {
                 <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[550px] h-[550px] bg-blue-600/10 rounded-full filter blur-[120px] pointer-events-none" />
                 <div className="absolute -bottom-10 right-10 w-96 h-96 bg-purple-600/5 rounded-full filter blur-[100px] pointer-events-none animate-pulse" />
 
-                <div className="max-w-3xl mx-auto space-y-6 relative z-10">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[10px] uppercase font-mono text-blue-600 tracking-wider font-bold">
-                    <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-                    Apple-grade Design Architecture
-                  </div>
-
-                  <h1 className="font-display font-semibold text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none">
-                    Design. Rank. Grow.
-                    <span className="block text-slate-600 font-light font-sans text-xl sm:text-3xl mt-4 max-w-xl mx-auto leading-normal">
-                      Your complete end-to-end digital growth partner.
+                <div className="max-w-3xl mx-auto space-y-5 relative z-10 select-text">
+                  <h1 className="font-display font-black text-3xl sm:text-5xl text-slate-950 tracking-tight leading-[1.1]">
+                    Handcoded Websites.
+                    <span className="block text-blue-600 font-bold">
+                      Zero Template Bloat.
                     </span>
                   </h1>
 
-                  <p className="text-sm sm:text-base font-sans text-slate-650 leading-relaxed max-w-lg mx-auto">
-                    Stop juggling multiple unaligned agencies. We combine handcoded UI layouts constructed for speed with high-prestige branding and data-driven organic crawl maps.
+                  <p className="text-xs sm:text-sm font-sans text-slate-500 leading-relaxed max-w-lg mx-auto">
+                    We build handcoded digital flagships engineered to load in 0.2 seconds, dominate search rankings, and convert cold traffic on autopilot.
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
@@ -245,11 +300,6 @@ export default function App() {
               {/* Bento Grid services summary */}
               <CreativeScrollReveal variant="lens-zoom-reveal">
                 <BentoGrid onPlanProject={() => setCurrentPage("contact")} />
-              </CreativeScrollReveal>
-
-              {/* Interactive Traffic ROI Simulator */}
-              <CreativeScrollReveal variant="blur-clear">
-                <TrafficRoiSimulator />
               </CreativeScrollReveal>
 
               {/* Philosophy details */}
@@ -396,6 +446,10 @@ export default function App() {
               <CreativeScrollReveal variant="magnetic-lift">
                 <StackComparisonMatrix />
               </CreativeScrollReveal>
+
+              <CreativeScrollReveal variant="perspective">
+                <TechStackBenchmark />
+              </CreativeScrollReveal>
               
               {/* Special interactive services block */}
               <CreativeScrollReveal variant="lens-zoom-reveal">
@@ -412,6 +466,10 @@ export default function App() {
             >
               <CreativeScrollReveal variant="lens-zoom-reveal">
                 <WebsiteAuditTool addToast={addToast} />
+              </CreativeScrollReveal>
+
+              <CreativeScrollReveal variant="perspective">
+                <SchemaSnippetPreviewer />
               </CreativeScrollReveal>
               
               {/* Special interactive crawler audit block */}
@@ -496,6 +554,10 @@ export default function App() {
               {/* Special interactive Zero-Bloat Manifesto Timeline */}
               <CreativeScrollReveal variant="perspective">
                 <SpecializedAboutSection />
+              </CreativeScrollReveal>
+
+              <CreativeScrollReveal variant="lens-zoom-reveal">
+                <CodeToUxTimeline />
               </CreativeScrollReveal>
             </motion.div>
           )}

@@ -161,9 +161,9 @@ export function Navbar({ currentPage, setCurrentPage, selectedIndustryId, setSel
           <button
             id="mobile-menu-trigger"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-zinc-400 hover:text-white transition-colors cursor-pointer p-1"
+            className="md:hidden text-slate-600 hover:text-blue-600 transition-colors cursor-pointer p-1"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 text-slate-800" /> : <Menu className="w-5 h-5 text-slate-800" />}
           </button>
         </div>
       </div>
